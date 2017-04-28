@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C85C32581EB2E9F300BB51AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85C32571EB2E9F300BB51AA /* AppDelegate.swift */; };
+		C85C325D1EB2E9F300BB51AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85C325B1EB2E9F300BB51AA /* Main.storyboard */; };
+		C85C325F1EB2E9F300BB51AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C85C325E1EB2E9F300BB51AA /* Assets.xcassets */; };
+		C85C32621EB2E9F300BB51AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85C32601EB2E9F300BB51AA /* LaunchScreen.storyboard */; };
+		C85C326D1EB2E9F300BB51AA /* Flashcard_TouchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85C326C1EB2E9F300BB51AA /* Flashcard_TouchTests.swift */; };
+		C85C327E1EB2EB7C00BB51AA /* Decks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85C327D1EB2EB7C00BB51AA /* Decks.storyboard */; };
+		C85C32801EB2EBA800BB51AA /* Folders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85C327F1EB2EBA800BB51AA /* Folders.storyboard */; };
+		C85C32821EB2EBC000BB51AA /* Stats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85C32811EB2EBC000BB51AA /* Stats.storyboard */; };
+		C85C32841EB2ED2100BB51AA /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85C32831EB2ED2100BB51AA /* AppStoryboard.swift */; };
+		C85C32861EB2ED3700BB51AA /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85C32851EB2ED3700BB51AA /* Extension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C85C32691EB2E9F300BB51AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C85C324C1EB2E9F300BB51AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C85C32531EB2E9F300BB51AA;
+			remoteInfo = "Flashcard Touch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C85C32541EB2E9F300BB51AA /* Flashcard Touch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flashcard Touch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C85C32571EB2E9F300BB51AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
+		C85C325C1EB2E9F300BB51AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C85C325E1EB2E9F300BB51AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
+		C85C32611EB2E9F300BB51AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C85C32631EB2E9F300BB51AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C85C32681EB2E9F300BB51AA /* Flashcard TouchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flashcard TouchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C85C326C1EB2E9F300BB51AA /* Flashcard_TouchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard_TouchTests.swift; sourceTree = "<group>"; };
+		C85C326E1EB2E9F300BB51AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C85C327D1EB2EB7C00BB51AA /* Decks.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Decks.storyboard; sourceTree = "<group>"; };
+		C85C327F1EB2EBA800BB51AA /* Folders.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Folders.storyboard; sourceTree = "<group>"; };
+		C85C32811EB2EBC000BB51AA /* Stats.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stats.storyboard; sourceTree = "<group>"; };
+		C85C32831EB2ED2100BB51AA /* AppStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
+		C85C32851EB2ED3700BB51AA /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C85C32511EB2E9F300BB51AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C85C32651EB2E9F300BB51AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C85C324B1EB2E9F300BB51AA = {
+			isa = PBXGroup;
+			children = (
+				C85C32561EB2E9F300BB51AA /* Flashcard Touch */,
+				C85C326B1EB2E9F300BB51AA /* Flashcard TouchTests */,
+				C85C32551EB2E9F300BB51AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C85C32551EB2E9F300BB51AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C85C32541EB2E9F300BB51AA /* Flashcard Touch.app */,
+				C85C32681EB2E9F300BB51AA /* Flashcard TouchTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C85C32561EB2E9F300BB51AA /* Flashcard Touch */ = {
+			isa = PBXGroup;
+			children = (
+				C85C32771EB2EAAB00BB51AA /* Controllers */,
+				C85C32781EB2EAAB00BB51AA /* Helpers */,
+				C85C32791EB2EAAB00BB51AA /* Models */,
+				C85C327A1EB2EAAB00BB51AA /* Resources */,
+				C85C327B1EB2EAAB00BB51AA /* Views */,
+				C85C32631EB2E9F300BB51AA /* Info.plist */,
+			);
+			path = "Flashcard Touch";
+			sourceTree = "<group>";
+		};
+		C85C326B1EB2E9F300BB51AA /* Flashcard TouchTests */ = {
+			isa = PBXGroup;
+			children = (
+				C85C326C1EB2E9F300BB51AA /* Flashcard_TouchTests.swift */,
+				C85C326E1EB2E9F300BB51AA /* Info.plist */,
+			);
+			path = "Flashcard TouchTests";
+			sourceTree = "<group>";
+		};
+		C85C32771EB2EAAB00BB51AA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C85C32781EB2EAAB00BB51AA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C85C32851EB2ED3700BB51AA /* Extension.swift */,
+				C85C32831EB2ED2100BB51AA /* AppStoryboard.swift */,
+				C85C32571EB2E9F300BB51AA /* AppDelegate.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C85C32791EB2EAAB00BB51AA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C85C327A1EB2EAAB00BB51AA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C85C325E1EB2E9F300BB51AA /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C85C327B1EB2EAAB00BB51AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C85C327C1EB2EAD700BB51AA /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C85C327C1EB2EAD700BB51AA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C85C325B1EB2E9F300BB51AA /* Main.storyboard */,
+				C85C32601EB2E9F300BB51AA /* LaunchScreen.storyboard */,
+				C85C327D1EB2EB7C00BB51AA /* Decks.storyboard */,
+				C85C327F1EB2EBA800BB51AA /* Folders.storyboard */,
+				C85C32811EB2EBC000BB51AA /* Stats.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C85C32531EB2E9F300BB51AA /* Flashcard Touch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C85C32711EB2E9F300BB51AA /* Build configuration list for PBXNativeTarget "Flashcard Touch" */;
+			buildPhases = (
+				C85C32501EB2E9F300BB51AA /* Sources */,
+				C85C32511EB2E9F300BB51AA /* Frameworks */,
+				C85C32521EB2E9F300BB51AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Flashcard Touch";
+			productName = "Flashcard Touch";
+			productReference = C85C32541EB2E9F300BB51AA /* Flashcard Touch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C85C32671EB2E9F300BB51AA /* Flashcard TouchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C85C32741EB2E9F300BB51AA /* Build configuration list for PBXNativeTarget "Flashcard TouchTests" */;
+			buildPhases = (
+				C85C32641EB2E9F300BB51AA /* Sources */,
+				C85C32651EB2E9F300BB51AA /* Frameworks */,
+				C85C32661EB2E9F300BB51AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C85C326A1EB2E9F300BB51AA /* PBXTargetDependency */,
+			);
+			name = "Flashcard TouchTests";
+			productName = "Flashcard TouchTests";
+			productReference = C85C32681EB2E9F300BB51AA /* Flashcard TouchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C85C324C1EB2E9F300BB51AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = CPU11713;
+				TargetAttributes = {
+					C85C32531EB2E9F300BB51AA = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 2X825966A4;
+						ProvisioningStyle = Automatic;
+					};
+					C85C32671EB2E9F300BB51AA = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 2X825966A4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C85C32531EB2E9F300BB51AA;
+					};
+				};
+			};
+			buildConfigurationList = C85C324F1EB2E9F300BB51AA /* Build configuration list for PBXProject "Flashcard Touch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C85C324B1EB2E9F300BB51AA;
+			productRefGroup = C85C32551EB2E9F300BB51AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C85C32531EB2E9F300BB51AA /* Flashcard Touch */,
+				C85C32671EB2E9F300BB51AA /* Flashcard TouchTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C85C32521EB2E9F300BB51AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C85C32821EB2EBC000BB51AA /* Stats.storyboard in Resources */,
+				C85C32621EB2E9F300BB51AA /* LaunchScreen.storyboard in Resources */,
+				C85C327E1EB2EB7C00BB51AA /* Decks.storyboard in Resources */,
+				C85C325F1EB2E9F300BB51AA /* Assets.xcassets in Resources */,
+				C85C325D1EB2E9F300BB51AA /* Main.storyboard in Resources */,
+				C85C32801EB2EBA800BB51AA /* Folders.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C85C32661EB2E9F300BB51AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C85C32501EB2E9F300BB51AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C85C32861EB2ED3700BB51AA /* Extension.swift in Sources */,
+				C85C32841EB2ED2100BB51AA /* AppStoryboard.swift in Sources */,
+				C85C32581EB2E9F300BB51AA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C85C32641EB2E9F300BB51AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C85C326D1EB2E9F300BB51AA /* Flashcard_TouchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C85C326A1EB2E9F300BB51AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C85C32531EB2E9F300BB51AA /* Flashcard Touch */;
+			targetProxy = C85C32691EB2E9F300BB51AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C85C325B1EB2E9F300BB51AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C85C325C1EB2E9F300BB51AA /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		C85C32601EB2E9F300BB51AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C85C32611EB2E9F300BB51AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C85C326F1EB2E9F300BB51AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C85C32701EB2E9F300BB51AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C85C32721EB2E9F300BB51AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2X825966A4;
+				INFOPLIST_FILE = "Flashcard Touch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.VNG.Huy.Flashcard-Touch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C85C32731EB2E9F300BB51AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2X825966A4;
+				INFOPLIST_FILE = "Flashcard Touch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.VNG.Huy.Flashcard-Touch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		C85C32751EB2E9F300BB51AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2X825966A4;
+				INFOPLIST_FILE = "Flashcard TouchTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.VNG.Huy.Flashcard-TouchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flashcard Touch.app/Flashcard Touch";
+			};
+			name = Debug;
+		};
+		C85C32761EB2E9F300BB51AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2X825966A4;
+				INFOPLIST_FILE = "Flashcard TouchTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.VNG.Huy.Flashcard-TouchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flashcard Touch.app/Flashcard Touch";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C85C324F1EB2E9F300BB51AA /* Build configuration list for PBXProject "Flashcard Touch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C85C326F1EB2E9F300BB51AA /* Debug */,
+				C85C32701EB2E9F300BB51AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C85C32711EB2E9F300BB51AA /* Build configuration list for PBXNativeTarget "Flashcard Touch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C85C32721EB2E9F300BB51AA /* Debug */,
+				C85C32731EB2E9F300BB51AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C85C32741EB2E9F300BB51AA /* Build configuration list for PBXNativeTarget "Flashcard TouchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C85C32751EB2E9F300BB51AA /* Debug */,
+				C85C32761EB2E9F300BB51AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C85C324C1EB2E9F300BB51AA /* Project object */;
+}
