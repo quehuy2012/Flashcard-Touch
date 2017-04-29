@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7063A8BD1EB4731F007C6DD3 /* DeckDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7063A8BC1EB4731F007C6DD3 /* DeckDetail.storyboard */; };
 		7063A8C31EB478C7007C6DD3 /* DeckDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7063A8C21EB478C7007C6DD3 /* DeckDetailViewController.swift */; };
+		7063A8C61EB47A7E007C6DD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7063A8C51EB47A7E007C6DD3 /* Assets.xcassets */; };
 		ABC8A8021E9D900CFBEAFD60 /* Pods_Flashcard_Touch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA102AB2EC9883AB124AAB9F /* Pods_Flashcard_Touch.framework */; };
 		C85C32581EB2E9F300BB51AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85C32571EB2E9F300BB51AA /* AppDelegate.swift */; };
 		C85C325D1EB2E9F300BB51AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85C325B1EB2E9F300BB51AA /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		4F0AF1B0C70ABE0029145141 /* Pods-Flashcard Touch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashcard Touch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flashcard Touch/Pods-Flashcard Touch.release.xcconfig"; sourceTree = "<group>"; };
 		7063A8BC1EB4731F007C6DD3 /* DeckDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DeckDetail.storyboard; sourceTree = "<group>"; };
 		7063A8C21EB478C7007C6DD3 /* DeckDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckDetailViewController.swift; sourceTree = "<group>"; };
+		7063A8C51EB47A7E007C6DD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93F4B51FDD8B249BAE544200 /* Pods-Flashcard Touch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashcard Touch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flashcard Touch/Pods-Flashcard Touch.debug.xcconfig"; sourceTree = "<group>"; };
 		C85C32541EB2E9F300BB51AA /* Flashcard Touch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flashcard Touch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C85C32571EB2E9F300BB51AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,19 +88,20 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		7063A8C01EB47873007C6DD3 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
 		7063A8C11EB47891007C6DD3 /* DeckDetail */ = {
 			isa = PBXGroup;
 			children = (
 				7063A8C21EB478C7007C6DD3 /* DeckDetailViewController.swift */,
 			);
 			name = DeckDetail;
+			sourceTree = "<group>";
+		};
+		7063A8C41EB47A6F007C6DD3 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7063A8C51EB47A7E007C6DD3 /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		C85C324B1EB2E9F300BB51AA = {
@@ -124,9 +127,9 @@
 		C85C32561EB2E9F300BB51AA /* Flashcard Touch */ = {
 			isa = PBXGroup;
 			children = (
+				7063A8C41EB47A6F007C6DD3 /* Resource */,
 				7063A8BE1EB47873007C6DD3 /* Controller */,
 				7063A8BF1EB47873007C6DD3 /* Model */,
-				7063A8C01EB47873007C6DD3 /* Resource */,
 				C85C32781EB2EAAB00BB51AA /* Helpers */,
 				C85C327B1EB2EAAB00BB51AA /* Views */,
 				C85C32631EB2E9F300BB51AA /* Info.plist */,
@@ -283,6 +286,7 @@
 				C85C32621EB2E9F300BB51AA /* LaunchScreen.storyboard in Resources */,
 				C85C327E1EB2EB7C00BB51AA /* Decks.storyboard in Resources */,
 				C85C325D1EB2E9F300BB51AA /* Main.storyboard in Resources */,
+				7063A8C61EB47A7E007C6DD3 /* Assets.xcassets in Resources */,
 				7063A8BD1EB4731F007C6DD3 /* DeckDetail.storyboard in Resources */,
 				C85C32801EB2EBA800BB51AA /* Folders.storyboard in Resources */,
 			);
