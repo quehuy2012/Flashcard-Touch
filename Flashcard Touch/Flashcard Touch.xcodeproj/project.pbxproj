@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7063A8BD1EB4731F007C6DD3 /* DeckDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7063A8BC1EB4731F007C6DD3 /* DeckDetail.storyboard */; };
+		7063A8C31EB478C7007C6DD3 /* DeckDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7063A8C21EB478C7007C6DD3 /* DeckDetailViewController.swift */; };
+		ABC8A8021E9D900CFBEAFD60 /* Pods_Flashcard_Touch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA102AB2EC9883AB124AAB9F /* Pods_Flashcard_Touch.framework */; };
 		C85C32581EB2E9F300BB51AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85C32571EB2E9F300BB51AA /* AppDelegate.swift */; };
 		C85C325D1EB2E9F300BB51AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85C325B1EB2E9F300BB51AA /* Main.storyboard */; };
-		C85C325F1EB2E9F300BB51AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C85C325E1EB2E9F300BB51AA /* Assets.xcassets */; };
 		C85C32621EB2E9F300BB51AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85C32601EB2E9F300BB51AA /* LaunchScreen.storyboard */; };
 		C85C326D1EB2E9F300BB51AA /* Flashcard_TouchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85C326C1EB2E9F300BB51AA /* Flashcard_TouchTests.swift */; };
 		C85C327E1EB2EB7C00BB51AA /* Decks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85C327D1EB2EB7C00BB51AA /* Decks.storyboard */; };
@@ -30,10 +32,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F0AF1B0C70ABE0029145141 /* Pods-Flashcard Touch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashcard Touch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flashcard Touch/Pods-Flashcard Touch.release.xcconfig"; sourceTree = "<group>"; };
+		7063A8BC1EB4731F007C6DD3 /* DeckDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DeckDetail.storyboard; sourceTree = "<group>"; };
+		7063A8C21EB478C7007C6DD3 /* DeckDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckDetailViewController.swift; sourceTree = "<group>"; };
+		93F4B51FDD8B249BAE544200 /* Pods-Flashcard Touch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashcard Touch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flashcard Touch/Pods-Flashcard Touch.debug.xcconfig"; sourceTree = "<group>"; };
 		C85C32541EB2E9F300BB51AA /* Flashcard Touch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flashcard Touch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C85C32571EB2E9F300BB51AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		C85C325C1EB2E9F300BB51AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C85C325E1EB2E9F300BB51AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		C85C32611EB2E9F300BB51AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C85C32631EB2E9F300BB51AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C85C32681EB2E9F300BB51AA /* Flashcard TouchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flashcard TouchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +49,7 @@
 		C85C32811EB2EBC000BB51AA /* Stats.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stats.storyboard; sourceTree = "<group>"; };
 		C85C32831EB2ED2100BB51AA /* AppStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		C85C32851EB2ED3700BB51AA /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		DA102AB2EC9883AB124AAB9F /* Pods_Flashcard_Touch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flashcard_Touch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC8A8021E9D900CFBEAFD60 /* Pods_Flashcard_Touch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,12 +71,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7063A8BE1EB47873007C6DD3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7063A8C11EB47891007C6DD3 /* DeckDetail */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7063A8BF1EB47873007C6DD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7063A8C01EB47873007C6DD3 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		7063A8C11EB47891007C6DD3 /* DeckDetail */ = {
+			isa = PBXGroup;
+			children = (
+				7063A8C21EB478C7007C6DD3 /* DeckDetailViewController.swift */,
+			);
+			name = DeckDetail;
+			sourceTree = "<group>";
+		};
 		C85C324B1EB2E9F300BB51AA = {
 			isa = PBXGroup;
 			children = (
 				C85C32561EB2E9F300BB51AA /* Flashcard Touch */,
 				C85C326B1EB2E9F300BB51AA /* Flashcard TouchTests */,
 				C85C32551EB2E9F300BB51AA /* Products */,
+				E9165C730DBACB3C0206DD94 /* Pods */,
+				F6AEBB9FC2BCE5156CEC1C45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,10 +124,10 @@
 		C85C32561EB2E9F300BB51AA /* Flashcard Touch */ = {
 			isa = PBXGroup;
 			children = (
-				C85C32771EB2EAAB00BB51AA /* Controllers */,
+				7063A8BE1EB47873007C6DD3 /* Controller */,
+				7063A8BF1EB47873007C6DD3 /* Model */,
+				7063A8C01EB47873007C6DD3 /* Resource */,
 				C85C32781EB2EAAB00BB51AA /* Helpers */,
-				C85C32791EB2EAAB00BB51AA /* Models */,
-				C85C327A1EB2EAAB00BB51AA /* Resources */,
 				C85C327B1EB2EAAB00BB51AA /* Views */,
 				C85C32631EB2E9F300BB51AA /* Info.plist */,
 			);
@@ -104,13 +143,6 @@
 			path = "Flashcard TouchTests";
 			sourceTree = "<group>";
 		};
-		C85C32771EB2EAAB00BB51AA /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		C85C32781EB2EAAB00BB51AA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,21 +151,6 @@
 				C85C32571EB2E9F300BB51AA /* AppDelegate.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		C85C32791EB2EAAB00BB51AA /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		C85C327A1EB2EAAB00BB51AA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				C85C325E1EB2E9F300BB51AA /* Assets.xcassets */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		C85C327B1EB2EAAB00BB51AA /* Views */ = {
@@ -152,8 +169,26 @@
 				C85C327D1EB2EB7C00BB51AA /* Decks.storyboard */,
 				C85C327F1EB2EBA800BB51AA /* Folders.storyboard */,
 				C85C32811EB2EBC000BB51AA /* Stats.storyboard */,
+				7063A8BC1EB4731F007C6DD3 /* DeckDetail.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		E9165C730DBACB3C0206DD94 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93F4B51FDD8B249BAE544200 /* Pods-Flashcard Touch.debug.xcconfig */,
+				4F0AF1B0C70ABE0029145141 /* Pods-Flashcard Touch.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F6AEBB9FC2BCE5156CEC1C45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA102AB2EC9883AB124AAB9F /* Pods_Flashcard_Touch.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C85C32711EB2E9F300BB51AA /* Build configuration list for PBXNativeTarget "Flashcard Touch" */;
 			buildPhases = (
+				5198D09AFC8B4B05BCD1AB85 /* [CP] Check Pods Manifest.lock */,
 				C85C32501EB2E9F300BB51AA /* Sources */,
 				C85C32511EB2E9F300BB51AA /* Frameworks */,
 				C85C32521EB2E9F300BB51AA /* Resources */,
+				AF2F414EE66A660B3C586A1C /* [CP] Embed Pods Frameworks */,
+				E60C890C7E8648777980DEE4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,8 +282,8 @@
 				C85C32821EB2EBC000BB51AA /* Stats.storyboard in Resources */,
 				C85C32621EB2E9F300BB51AA /* LaunchScreen.storyboard in Resources */,
 				C85C327E1EB2EB7C00BB51AA /* Decks.storyboard in Resources */,
-				C85C325F1EB2E9F300BB51AA /* Assets.xcassets in Resources */,
 				C85C325D1EB2E9F300BB51AA /* Main.storyboard in Resources */,
+				7063A8BD1EB4731F007C6DD3 /* DeckDetail.storyboard in Resources */,
 				C85C32801EB2EBA800BB51AA /* Folders.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +297,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5198D09AFC8B4B05BCD1AB85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AF2F414EE66A660B3C586A1C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flashcard Touch/Pods-Flashcard Touch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E60C890C7E8648777980DEE4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flashcard Touch/Pods-Flashcard Touch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C85C32501EB2E9F300BB51AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -266,6 +352,7 @@
 			files = (
 				C85C32861EB2ED3700BB51AA /* Extension.swift in Sources */,
 				C85C32841EB2ED2100BB51AA /* AppStoryboard.swift in Sources */,
+				7063A8C31EB478C7007C6DD3 /* DeckDetailViewController.swift in Sources */,
 				C85C32581EB2E9F300BB51AA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +490,7 @@
 		};
 		C85C32721EB2E9F300BB51AA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93F4B51FDD8B249BAE544200 /* Pods-Flashcard Touch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2X825966A4;
@@ -416,6 +504,7 @@
 		};
 		C85C32731EB2E9F300BB51AA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F0AF1B0C70ABE0029145141 /* Pods-Flashcard Touch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2X825966A4;
@@ -476,6 +565,7 @@
 				C85C32731EB2E9F300BB51AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C85C32741EB2E9F300BB51AA /* Build configuration list for PBXNativeTarget "Flashcard TouchTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +574,7 @@
 				C85C32761EB2E9F300BB51AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
