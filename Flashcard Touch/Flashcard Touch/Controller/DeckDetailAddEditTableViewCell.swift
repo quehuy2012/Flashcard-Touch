@@ -8,13 +8,21 @@
 
 import UIKit
 
-class DeckDetailAddEditTableViewCell: UITableViewCell {
+protocol DeckDetailAddEditTableViewCellDelegate: class {
+    func cell(_ cell:DeckDetailAddEditTableViewCell, didEndEdit term: String, definition: String)
+}
+
+class DeckDetailAddEditTableViewCell: UITableViewCell, UITextFieldDelegate {
+    
+    weak var delegate:DeckDetailAddEditTableViewCellDelegate?
 
     @IBOutlet weak var termTextField: UITextField!
     @IBOutlet weak var giaiNghiaTextField: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        termTextField.delegate = self
+        giaiNghiaTextField.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -22,5 +30,16 @@ class DeckDetailAddEditTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        delegate?.cell(self, didEndEdit: termTextField.text ?? "", definition: giaiNghiaTextField.text ?? "")
+    }
+    
+    @IBAction func termTextFieldTextChanged(_ sender: AnyObject) {
+        delegate?.cell(self, didEndEdit: termTextField.text ?? "", definition: giaiNghiaTextField.text ?? "")
+    }
+    
+    @IBAction func definitionTextFieldTextChanged(_ sender: AnyObject) {
+        delegate?.cell(self, didEndEdit: termTextField.text ?? "", definition: giaiNghiaTextField.text ?? "")
+    }
 }

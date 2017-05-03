@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		705509CB1EB7A7BA00BBB572 /* DeckDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705509CA1EB7A7BA00BBB572 /* DeckDetailTableViewCell.swift */; };
-		705509CD1EB8BC5E00BBB572 /* DeckDetailAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705509CC1EB8BC5E00BBB572 /* DeckDetailAddEditViewController.swift */; };
-		705509CF1EB8C55A00BBB572 /* DeckDetailAddEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705509CE1EB8C55A00BBB572 /* DeckDetailAddEditTableViewCell.swift */; };
+		102219691EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102219681EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift */; };
+		1022196B1EB9EF6700B8BE8B /* DeckDetailAddEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1022196A1EB9EF6700B8BE8B /* DeckDetailAddEditTableViewCell.swift */; };
+		213DCCE51EB98AC7009487C9 /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DCCE41EB98AC7009487C9 /* DeckViewController.swift */; };
 		7063A8BD1EB4731F007C6DD3 /* DeckDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7063A8BC1EB4731F007C6DD3 /* DeckDetail.storyboard */; };
 		7063A8C31EB478C7007C6DD3 /* DeckDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7063A8C21EB478C7007C6DD3 /* DeckDetailViewController.swift */; };
 		7063A8C61EB47A7E007C6DD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7063A8C51EB47A7E007C6DD3 /* Assets.xcassets */; };
@@ -40,10 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		102219681EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckDetailAddEditViewController.swift; sourceTree = "<group>"; };
+		1022196A1EB9EF6700B8BE8B /* DeckDetailAddEditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckDetailAddEditTableViewCell.swift; sourceTree = "<group>"; };
+		213DCCE41EB98AC7009487C9 /* DeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = "<group>"; };
 		4F0AF1B0C70ABE0029145141 /* Pods-Flashcard Touch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashcard Touch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flashcard Touch/Pods-Flashcard Touch.release.xcconfig"; sourceTree = "<group>"; };
-		705509CA1EB7A7BA00BBB572 /* DeckDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckDetailTableViewCell.swift; sourceTree = "<group>"; };
-		705509CC1EB8BC5E00BBB572 /* DeckDetailAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckDetailAddEditViewController.swift; sourceTree = "<group>"; };
-		705509CE1EB8C55A00BBB572 /* DeckDetailAddEditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckDetailAddEditTableViewCell.swift; sourceTree = "<group>"; };
 		7063A8BC1EB4731F007C6DD3 /* DeckDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DeckDetail.storyboard; sourceTree = "<group>"; };
 		7063A8C21EB478C7007C6DD3 /* DeckDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckDetailViewController.swift; sourceTree = "<group>"; };
 		7063A8C51EB47A7E007C6DD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				7063A8C11EB47891007C6DD3 /* DeckDetail */,
+				213DCCE41EB98AC7009487C9 /* DeckViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -109,10 +110,9 @@
 		7063A8C11EB47891007C6DD3 /* DeckDetail */ = {
 			isa = PBXGroup;
 			children = (
+				1022196A1EB9EF6700B8BE8B /* DeckDetailAddEditTableViewCell.swift */,
+				102219681EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift */,
 				7063A8C21EB478C7007C6DD3 /* DeckDetailViewController.swift */,
-				705509CA1EB7A7BA00BBB572 /* DeckDetailTableViewCell.swift */,
-				705509CC1EB8BC5E00BBB572 /* DeckDetailAddEditViewController.swift */,
-				705509CE1EB8C55A00BBB572 /* DeckDetailAddEditTableViewCell.swift */,
 			);
 			name = DeckDetail;
 			sourceTree = "<group>";
@@ -375,7 +375,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				705509CB1EB7A7BA00BBB572 /* DeckDetailTableViewCell.swift in Sources */,
 				7063A8CA1EB47BC6007C6DD3 /* Deck.swift in Sources */,
 				C85C32861EB2ED3700BB51AA /* Extension.swift in Sources */,
 				C85C32841EB2ED2100BB51AA /* AppStoryboard.swift in Sources */,
@@ -383,9 +382,10 @@
 				7063A8CE1EB47F28007C6DD3 /* SeedData.swift in Sources */,
 				7063A8C31EB478C7007C6DD3 /* DeckDetailViewController.swift in Sources */,
 				C85C32581EB2E9F300BB51AA /* AppDelegate.swift in Sources */,
-				705509CD1EB8BC5E00BBB572 /* DeckDetailAddEditViewController.swift in Sources */,
 				7063A8CC1EB47BDE007C6DD3 /* Folder.swift in Sources */,
-				705509CF1EB8C55A00BBB572 /* DeckDetailAddEditTableViewCell.swift in Sources */,
+				102219691EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift in Sources */,
+				213DCCE51EB98AC7009487C9 /* DeckViewController.swift in Sources */,
+				1022196B1EB9EF6700B8BE8B /* DeckDetailAddEditTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +527,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2X825966A4;
 				INFOPLIST_FILE = "Flashcard Touch/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.VNG.Huy.Flashcard-Touch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -541,6 +542,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2X825966A4;
 				INFOPLIST_FILE = "Flashcard Touch/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.VNG.Huy.Flashcard-Touch";
 				PRODUCT_NAME = "$(TARGET_NAME)";

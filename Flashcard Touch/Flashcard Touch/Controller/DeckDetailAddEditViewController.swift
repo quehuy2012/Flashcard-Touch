@@ -8,24 +8,34 @@
 
 import UIKit
 
-protocol DeckDetailTableControllerDelegate: class {
-    func edit(card:Card)
+protocol DeckDetailAddEditViewControllerDelegate: class {
+    func didEndEdit(deck:Deck)
 }
 
 class DeckDetailAddEditViewController: UIViewController {
     
+    @IBOutlet weak var accessoryTermCountItem: UIBarButtonItem!
+    @IBOutlet var keyboardAccessoryView: UIToolbar!
+    @IBOutlet weak var deckTitleTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     var cardt:[Card] = []
     
-    weak var delegate:DeckDetailTableControllerDelegate?
+    var deck:Deck!
+    
+    weak var delegate:DeckDetailAddEditViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
         
+        deckTitleTextField.text = deck.name
+        accessoryTermCountItem.title =
+        "\(deck.cards.count) term"
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,9 +44,14 @@ class DeckDetailAddEditViewController: UIViewController {
     }
     
     @IBAction func acceptEditButton(_ sender: Any) {
-        
+        deck.identifier = deckTitleTextField.text ?? ""
+        self.delegate?.didEndEdit(deck: deck)
     }
 
+    @IBAction func addCardButtonTapped(_ sender: AnyObject) {
+        deck.cards.append(Card())
+        tableView.reloadData()
+    }
     /*
     // MARK: - Navigation
 
@@ -49,7 +64,7 @@ class DeckDetailAddEditViewController: UIViewController {
 
 }
 
-extension DeckDetailAddEditViewController : UITableViewDelegate, UITableViewDataSource {
+extension DeckDetailAddEditViewController : UITableViewDelegate, UITableViewDataSource, DeckDetailAddEditTableViewCellDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -59,19 +74,29 @@ extension DeckDetailAddEditViewController : UITableViewDelegate, UITableViewData
         //        print("hihi")
         print(cardt.count)
         print("-----")
-        return cardt.count
+        return deck.cards.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DeckDetailAddEditTableViewCell", for: indexPath) as! DeckDetailAddEditTableViewCell
-        let gramma = cardt[indexPath.row]
+        let gramma = deck.cards[indexPath.row]
         //        cell.descriptionLabel.text = table.name
         cell.termTextField.text = gramma.term
         cell.giaiNghiaTextField.text = "\(gramma.definition)"
         
         cell.editingAccessoryType = .disclosureIndicator
-        
-        
+        cell.delegate = self
+        cell.termTextField.inputAccessoryView = keyboardAccessoryView
+        cell.giaiNghiaTextField.inputAccessoryView = keyboardAccessoryView
         return cell
+    }
+    
+    func cell(_ cell: DeckDetailAddEditTableViewCell, didEndEdit term: String, definition: String) {
+        guard let indexPath = tableView.indexPath(for: cell) else {
+            return
+        }
+        
+        deck.cards[indexPath.row].term = term
+        deck.cards[indexPath.row].definition = definition
     }
 }

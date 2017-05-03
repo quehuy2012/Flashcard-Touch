@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 enum AppStoryboard : String {
-    case Main, Management, TableManagement, FoodManagement, TableOrder, AreaManagement
+    case Main, DeckDetail
     
     var instance : UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)

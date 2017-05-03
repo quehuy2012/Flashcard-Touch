@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Deck {
+class Deck {
     var identifier : String
     var name : String
     var cards : [Card]

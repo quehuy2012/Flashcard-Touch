@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Card {
+class Card {
     var term : String
     var definition : String
     var termImage : UIImage?

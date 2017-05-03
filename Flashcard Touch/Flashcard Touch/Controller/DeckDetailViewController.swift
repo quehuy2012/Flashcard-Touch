@@ -11,44 +11,52 @@ import BTNavigationDropdownMenu
 
 class DeckDetailViewController: UIViewController {
     
+    //MARK: UI Elements
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var totalTerm: UILabel!
+    @IBOutlet weak var countTerm: UILabel!
+    @IBOutlet weak var actionButton: UIButton!
     var menuView : BTNavigationDropdownMenu!
-    //card = struct Card
-    var card = Card()
-    //cardt = mảng Card
-    var cardt:[Card] = []
     
-    //cards = mảng string
-    var cards:[String] = []
-
+    //MARK: Local variable
+    var idDeck:String = ""
+    var isInsert = false
+    var localCard : [Card] = []
+    var deck:Deck!
+    var selectedDeckIndex = 0
+    
+    //MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-//        cardt.removeAll()
-        
-        self.automaticallyAdjustsScrollViewInsets = false
-
-        // Do any additional setup after loading the view.
-        
-        var item:[String] = []
-        let items = decks
-        
-        for i in items {
-            item.append(i.identifier)
-        }
-        print(item)
-        
         tableView.dataSource = self
-        tableView.delegate = self
+        
+        for (index,d) in decks.enumerated() {
+            if d.identifier == deck.identifier {
+                selectedDeckIndex = index
+            }
+        }
+        
+        actionButton.setTitle("Add", for: .normal)
+        
+        var sum = 0
+        for card in cards{
+            if card.deckID == idDeck{
+                localCard.append(card)
+                sum += 1
+            }
+        }
+        countTerm.text = "\(sum) Term"
+        
+        // Do any additional setup after loading the view.
+        let decksName = decks.map{ $0.name }
         
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 1.0, green:0.16, blue:0.4, alpha: 1.0)
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.4321628213, green: 0.337002188, blue: 0.9065725207, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, containerView: self.navigationController!.view, title: "Dropdown Menu", items: item as [AnyObject])
+        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, containerView: self.navigationController!.view, title: deck.name, items: decksName as [AnyObject])
         menuView.cellHeight = 50
         menuView.cellBackgroundColor = self.navigationController?.navigationBar.barTintColor
-        menuView.cellSelectionColor = UIColor(red: 0.0/255.0, green:160.0/255.0, blue:195.0/255.0, alpha: 1.0)
+        menuView.cellSelectionColor = #colorLiteral(red: 0.5347885489, green: 0.3542699218, blue: 0.9699434638, alpha: 1)
         menuView.shouldKeepSelectedCellColor = true
         menuView.cellTextLabelColor = UIColor.white
         menuView.cellTextLabelFont = UIFont(name: "Avenir-Heavy", size: 17)
@@ -61,38 +69,23 @@ class DeckDetailViewController: UIViewController {
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
             print("Did select item at index: \(indexPath)")
             
-            let temp = item[indexPath]
+            let temp = decks[indexPath]
             print(temp)
             
-            for i in items {
-                if temp == i.identifier {
-                    self.cardt = i.cards
-                }
-            }
+            self.localCard = temp.cards
             
             print("-------")
-            print(self.cardt.count)
+            //print(self.cardt.count)
             
-//            print(decks)
-            
-            self.totalTerm.text = "\(self.cardt.count)"
+            //            print(decks)
+
+            self.countTerm.text = "\(self.localCard.count)"
             self.tableView.reloadData()
             
+            self.selectedDeckIndex = indexPath
         }
         
         self.navigationItem.titleView = menuView
-        
-        
-    }
-    
-    //chuyển màn hình có dữ liệu
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueEditDeckDetail" {
-            let dest = segue.destination as! DeckDetailAddEditViewController
-            
-            dest.cardt = self.cardt
-            print(dest.cardt)
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,7 +93,18 @@ class DeckDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    // MARK: UI Event
+    
+    @IBAction func editTapped(_ sender: AnyObject) {
+        print("Edit tapped")
+        let viewController = DeckDetailAddEditViewController.instantiateFrom(appStoryboard: .DeckDetail)
+        viewController.cardt = localCard
+        viewController.deck = decks[selectedDeckIndex]
+        viewController.delegate = self
+        
+        navigationController?.pushViewController(viewController, animated: true)
+    }
     /*
     // MARK: - Navigation
 
@@ -113,36 +117,45 @@ class DeckDetailViewController: UIViewController {
 
 }
 
-extension DeckDetailViewController : UITableViewDelegate, UITableViewDataSource, DeckDetailTableControllerDelegate {
+extension DeckDetailViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    //UItableDatasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print("hihi")
-//        print(cardt.count)
-        return cardt.count
+        return localCard.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DeckDetailTableViewCell", for: indexPath) as! DeckDetailTableViewCell
-        let gramma = cardt[indexPath.row]
-        //        cell.descriptionLabel.text = table.name
-        cell.termLabel.text = gramma.term
-        cell.giaiNghiaLabel.text = "\(gramma.definition)"
+        let card = localCard[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        cell.editingAccessoryType = .disclosureIndicator
+        let viewBackground = cell.viewWithTag(10) as UIView!
+        let term = cell.viewWithTag(20) as! UILabel
+        let definition = cell.viewWithTag(30) as! UILabel
         
+        let randomNum:UInt32 = arc4random_uniform(3) + 1
+        
+        if randomNum%3 == 0{
+            viewBackground?.backgroundColor = UIColor.red
+        } else if randomNum%3 == 1{
+            viewBackground?.backgroundColor = UIColor.green
+        } else{
+            viewBackground?.backgroundColor = UIColor.purple
+        }
+        term.textColor = UIColor.white
+        term.text = card.term
+        definition.text = card.definition
         
         return cell
     }
-    
-    //delegate
-//    func add(deck: Deck) {
-//    }
-    
-    func edit(card: Card) {
-        cardt = [card]
+}
+
+extension DeckDetailViewController: DeckDetailAddEditViewControllerDelegate {
+    func didEndEdit(deck: Deck) {
+        localCard = deck.cards
+        tableView.reloadData()
+        
+        navigationController?.popViewController(animated: true)
     }
 }

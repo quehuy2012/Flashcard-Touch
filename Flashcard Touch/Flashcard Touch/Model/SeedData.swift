@@ -23,6 +23,16 @@ let cards2 : [Card] = [
     Card(term: "smile", definition: "hihi", termImage: nil, definitionImage: nil, deckID: "2")
 ]
 
+let cards: [Card] = [
+    Card(term: "normal", definition: "bình thường", termImage: nil, definitionImage: nil, deckID: "1"),
+    Card(term: "apple", definition: "táo", termImage: nil, definitionImage: nil, deckID: "1"),
+    Card(term: "book", definition: "sách", termImage: nil, definitionImage: nil, deckID: "2"),
+    Card(term: "books", definition: "nhiều quyền sách", termImage: nil, definitionImage: nil, deckID: "2"),
+    Card(term: "cook", definition: "nấu ăn", termImage: nil, definitionImage: nil, deckID: "2"),
+    Card(term: "smile", definition: "hihi", termImage: nil, definitionImage: nil, deckID: "2")
+]
+
+
 //create deck
 let decks : [Deck] = [
     Deck(identifier: "1", name: "bí kíp", cards: cards1, lastActivity: nil, folderID: "1"),
