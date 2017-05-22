@@ -10,6 +10,11 @@
 		102219691EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102219681EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift */; };
 		1022196B1EB9EF6700B8BE8B /* DeckDetailAddEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1022196A1EB9EF6700B8BE8B /* DeckDetailAddEditTableViewCell.swift */; };
 		213DCCE51EB98AC7009487C9 /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DCCE41EB98AC7009487C9 /* DeckViewController.swift */; };
+		705509D71EC61A6F00BBB572 /* LoginApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 705509D61EC61A6F00BBB572 /* LoginApp.storyboard */; };
+		705509DA1EC6209600BBB572 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 705509D91EC6209600BBB572 /* GoogleService-Info.plist */; };
+		7060DA011EC89AD800FD03F2 /* ScreenGame1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7060DA001EC89AD800FD03F2 /* ScreenGame1.storyboard */; };
+		7060DA041EC8B27C00FD03F2 /* Game1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7060DA031EC8B27C00FD03F2 /* Game1ViewController.swift */; };
+		7060DA061EC98B6D00FD03F2 /* Game1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7060DA051EC98B6D00FD03F2 /* Game1CollectionViewCell.swift */; };
 		7063A8BD1EB4731F007C6DD3 /* DeckDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7063A8BC1EB4731F007C6DD3 /* DeckDetail.storyboard */; };
 		7063A8C31EB478C7007C6DD3 /* DeckDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7063A8C21EB478C7007C6DD3 /* DeckDetailViewController.swift */; };
 		7063A8C61EB47A7E007C6DD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7063A8C51EB47A7E007C6DD3 /* Assets.xcassets */; };
@@ -17,6 +22,7 @@
 		7063A8CA1EB47BC6007C6DD3 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7063A8C91EB47BC6007C6DD3 /* Deck.swift */; };
 		7063A8CC1EB47BDE007C6DD3 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7063A8CB1EB47BDE007C6DD3 /* Folder.swift */; };
 		7063A8CE1EB47F28007C6DD3 /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7063A8CD1EB47F28007C6DD3 /* SeedData.swift */; };
+		70B35F4F1EC6286400AD1D47 /* LoginGoogleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35F4E1EC6286400AD1D47 /* LoginGoogleViewController.swift */; };
 		ABC8A8021E9D900CFBEAFD60 /* Pods_Flashcard_Touch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA102AB2EC9883AB124AAB9F /* Pods_Flashcard_Touch.framework */; };
 		C85C32581EB2E9F300BB51AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85C32571EB2E9F300BB51AA /* AppDelegate.swift */; };
 		C85C325D1EB2E9F300BB51AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85C325B1EB2E9F300BB51AA /* Main.storyboard */; };
@@ -44,6 +50,11 @@
 		1022196A1EB9EF6700B8BE8B /* DeckDetailAddEditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckDetailAddEditTableViewCell.swift; sourceTree = "<group>"; };
 		213DCCE41EB98AC7009487C9 /* DeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = "<group>"; };
 		4F0AF1B0C70ABE0029145141 /* Pods-Flashcard Touch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashcard Touch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flashcard Touch/Pods-Flashcard Touch.release.xcconfig"; sourceTree = "<group>"; };
+		705509D61EC61A6F00BBB572 /* LoginApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginApp.storyboard; sourceTree = "<group>"; };
+		705509D91EC6209600BBB572 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7060DA001EC89AD800FD03F2 /* ScreenGame1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScreenGame1.storyboard; sourceTree = "<group>"; };
+		7060DA031EC8B27C00FD03F2 /* Game1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game1ViewController.swift; sourceTree = "<group>"; };
+		7060DA051EC98B6D00FD03F2 /* Game1CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game1CollectionViewCell.swift; sourceTree = "<group>"; };
 		7063A8BC1EB4731F007C6DD3 /* DeckDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DeckDetail.storyboard; sourceTree = "<group>"; };
 		7063A8C21EB478C7007C6DD3 /* DeckDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckDetailViewController.swift; sourceTree = "<group>"; };
 		7063A8C51EB47A7E007C6DD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +62,7 @@
 		7063A8C91EB47BC6007C6DD3 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		7063A8CB1EB47BDE007C6DD3 /* Folder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		7063A8CD1EB47F28007C6DD3 /* SeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeedData.swift; sourceTree = "<group>"; };
+		70B35F4E1EC6286400AD1D47 /* LoginGoogleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginGoogleViewController.swift; sourceTree = "<group>"; };
 		93F4B51FDD8B249BAE544200 /* Pods-Flashcard Touch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashcard Touch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flashcard Touch/Pods-Flashcard Touch.debug.xcconfig"; sourceTree = "<group>"; };
 		C85C32541EB2E9F300BB51AA /* Flashcard Touch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flashcard Touch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C85C32571EB2E9F300BB51AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,9 +99,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		705509D81EC61BC100BBB572 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				70B35F4E1EC6286400AD1D47 /* LoginGoogleViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		7060DA021EC8B25B00FD03F2 /* Game1 */ = {
+			isa = PBXGroup;
+			children = (
+				7060DA031EC8B27C00FD03F2 /* Game1ViewController.swift */,
+				7060DA051EC98B6D00FD03F2 /* Game1CollectionViewCell.swift */,
+			);
+			name = Game1;
+			sourceTree = "<group>";
+		};
 		7063A8BE1EB47873007C6DD3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7060DA021EC8B25B00FD03F2 /* Game1 */,
+				705509D81EC61BC100BBB572 /* Login */,
 				7063A8C11EB47891007C6DD3 /* DeckDetail */,
 				213DCCE41EB98AC7009487C9 /* DeckViewController.swift */,
 			);
@@ -154,6 +185,7 @@
 				C85C32781EB2EAAB00BB51AA /* Helpers */,
 				C85C327B1EB2EAAB00BB51AA /* Views */,
 				C85C32631EB2E9F300BB51AA /* Info.plist */,
+				705509D91EC6209600BBB572 /* GoogleService-Info.plist */,
 			);
 			path = "Flashcard Touch";
 			sourceTree = "<group>";
@@ -194,6 +226,8 @@
 				C85C327F1EB2EBA800BB51AA /* Folders.storyboard */,
 				C85C32811EB2EBC000BB51AA /* Stats.storyboard */,
 				7063A8BC1EB4731F007C6DD3 /* DeckDetail.storyboard */,
+				705509D61EC61A6F00BBB572 /* LoginApp.storyboard */,
+				7060DA001EC89AD800FD03F2 /* ScreenGame1.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -305,10 +339,13 @@
 			files = (
 				C85C32821EB2EBC000BB51AA /* Stats.storyboard in Resources */,
 				C85C32621EB2E9F300BB51AA /* LaunchScreen.storyboard in Resources */,
+				705509DA1EC6209600BBB572 /* GoogleService-Info.plist in Resources */,
 				C85C327E1EB2EB7C00BB51AA /* Decks.storyboard in Resources */,
 				C85C325D1EB2E9F300BB51AA /* Main.storyboard in Resources */,
+				705509D71EC61A6F00BBB572 /* LoginApp.storyboard in Resources */,
 				7063A8C61EB47A7E007C6DD3 /* Assets.xcassets in Resources */,
 				7063A8BD1EB4731F007C6DD3 /* DeckDetail.storyboard in Resources */,
+				7060DA011EC89AD800FD03F2 /* ScreenGame1.storyboard in Resources */,
 				C85C32801EB2EBA800BB51AA /* Folders.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,9 +419,12 @@
 				7063A8CE1EB47F28007C6DD3 /* SeedData.swift in Sources */,
 				7063A8C31EB478C7007C6DD3 /* DeckDetailViewController.swift in Sources */,
 				C85C32581EB2E9F300BB51AA /* AppDelegate.swift in Sources */,
+				7060DA041EC8B27C00FD03F2 /* Game1ViewController.swift in Sources */,
+				70B35F4F1EC6286400AD1D47 /* LoginGoogleViewController.swift in Sources */,
 				7063A8CC1EB47BDE007C6DD3 /* Folder.swift in Sources */,
 				102219691EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift in Sources */,
 				213DCCE51EB98AC7009487C9 /* DeckViewController.swift in Sources */,
+				7060DA061EC98B6D00FD03F2 /* Game1CollectionViewCell.swift in Sources */,
 				1022196B1EB9EF6700B8BE8B /* DeckDetailAddEditTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

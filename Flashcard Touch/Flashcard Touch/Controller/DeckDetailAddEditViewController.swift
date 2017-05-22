@@ -27,6 +27,8 @@ class DeckDetailAddEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(deck)
+        
         hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.
@@ -72,8 +74,6 @@ extension DeckDetailAddEditViewController : UITableViewDelegate, UITableViewData
     //UItableDatasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //        print("hihi")
-        print(cardt.count)
-        print("-----")
         return deck.cards.count
     }
     

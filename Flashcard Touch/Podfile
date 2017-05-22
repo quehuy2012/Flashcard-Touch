@@ -5,6 +5,9 @@ use_frameworks!
 target “Flashcard Touch” do
 
 pod 'SCLAlertView'
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'GoogleSignIn'
 pod 'DatePickerDialog'
 pod 'Kingfisher', '~> 3.0'
 pod 'BTNavigationDropdownMenu', :git => 'https://github.com/PhamBaTho/BTNavigationDropdownMenu.git', :branch => 'swift-3.0'

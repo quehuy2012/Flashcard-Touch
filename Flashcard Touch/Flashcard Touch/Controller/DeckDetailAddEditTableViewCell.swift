@@ -23,6 +23,10 @@ class DeckDetailAddEditTableViewCell: UITableViewCell, UITextFieldDelegate {
         // Initialization code
         termTextField.delegate = self
         giaiNghiaTextField.delegate = self
+        
+        let f = contentView.frame
+        let fr = UIEdgeInsetsInsetRect(f, UIEdgeInsetsMake(10, 10, 10, 10))
+        contentView.frame = fr
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

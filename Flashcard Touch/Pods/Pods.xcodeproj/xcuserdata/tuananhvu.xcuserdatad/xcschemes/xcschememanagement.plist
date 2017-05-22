@@ -14,6 +14,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GTMOAuth2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,7 +52,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>02D8DD082C726D444FA4E0B54EE64E07</key>
+		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,12 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1A092282BD0D30996A655C1773059FFC</key>
+		<key>1B85874CCDEEC5903571AB787E8CEF0A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1B85874CCDEEC5903571AB787E8CEF0A</key>
+		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>90D599232E0FA12D4DEFEAB7E79DE360</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +82,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C4944FEC314D1A66588651D006273ADE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D320218EFEF8585D5FEF31669DDD775B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
