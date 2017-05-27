@@ -50,10 +50,11 @@ class Game1ViewController: UIViewController {
         
         var dem = 0
         
-        while dem <= 1 {
+        while dem <= 5 {
             
-            if localCardTemp.count < 0 {
-                return
+            if localCardTemp.count <= 0 {
+                print(localCardTemp.count)
+                break
             }
             
             let temp = randomSerm()
@@ -81,7 +82,7 @@ class Game1ViewController: UIViewController {
             print(localCardTemp)
         }
         
-        //lưu term va definition vào mảng
+        //lưu term va definition vào mảng String
         for i in localCardSave{
             cardTermAndDefination.append(i.term)
             cardTermAndDefination.append(i.definition)
@@ -160,23 +161,29 @@ extension Game1ViewController: UICollectionViewDelegate, UICollectionViewDataSou
     //event choose collection view cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //
+        let temp = shuffedCardIndex.count
+//        print(temp)
+        
         if chooseFrist == -1 {
             chooseFrist = indexPath.row
-            let cell1 = collectionView.visibleCells[chooseFrist]
+            print(chooseFrist)
+            let cell1 = collectionView.cellForItem(at: indexPath)
             UIView.animate(withDuration: 0.5, animations: {
-                cell1.backgroundColor = UIColor.green
+                cell1?.backgroundColor = UIColor.green
             }, completion: nil)
         }
         else {
-            let cell1 = collectionView.visibleCells[chooseFrist]
+            let cell1 = collectionView.cellForItem(at: IndexPath(item: chooseFrist, section: 0))!
             
-            let cell = collectionView.visibleCells[indexPath.row]
+            let cell = collectionView.cellForItem(at: indexPath)!
             
             UIView.animate(withDuration: 0.5, delay: 0,options: UIViewAnimationOptions.curveEaseOut, animations: {
                 cell.backgroundColor = UIColor.green
             }, completion: { (finished) in
                 cell1.backgroundColor = UIColor.clear
                 cell.backgroundColor = UIColor.clear
+                
+                
             });
 //            UIView.animate(withDuration: 1.0, animations: { 
 //                cell.backgroundColor = UIColor.green
@@ -184,23 +191,26 @@ extension Game1ViewController: UICollectionViewDelegate, UICollectionViewDataSou
 //                cell1.backgroundColor = UIColor.clear
 //                cell.backgroundColor = UIColor.clear
 //            });
-            
-            for i in shuffedCardIndex {
-                if (i.termIndex == chooseFrist && i.definitionIndex == indexPath.row) || (i.termIndex == indexPath.row && i.definitionIndex == chooseFrist) {
+            for i in self.shuffedCardIndex {
+                if (i.termIndex == self.chooseFrist && i.definitionIndex == indexPath.row) || (i.termIndex == indexPath.row && i.definitionIndex == self.chooseFrist) {
                     
                     cell1.isHidden = true
                     cell.isHidden = true
+                    self.chooseFrist = -1
                     return
                 }
             }
+
+            
             chooseFrist = -1
         }
+        
     }
     
     //layout collectionview
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width / 3 - 1
-        let height = collectionView.frame.height / 4 - 1
+        let width = collectionView.frame.width / 3 - 10
+        let height = collectionView.frame.height / 4 - 16
         
         return CGSize(width: width, height: height)
     }
@@ -210,7 +220,11 @@ extension Game1ViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1.0
+        return 5.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(8, 8, 8, 8)
     }
     
 }

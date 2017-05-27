@@ -271,7 +271,7 @@
 		8EFB4CEA7B0AA41E34BC02AC3D166D8A /* BTNavigationDropdownMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BTNavigationDropdownMenu.swift; path = Source/BTNavigationDropdownMenu.swift; sourceTree = "<group>"; };
 		91200A51A7D8E8543EA1F658470F060F /* Pods-Flashcard Touch-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Flashcard Touch-frameworks.sh"; sourceTree = "<group>"; };
 		926F882014693169E7551FE4B3E173EB /* Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kingfisher.swift; path = Sources/Kingfisher.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		961906885CFE0A21471E9193A24259CF /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseNanoPB.framework; path = Frameworks/FirebaseNanoPB.framework; sourceTree = "<group>"; };
 		98DD16EE5A5E2DC3C4EFAFC269950C19 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		98F179961986208BE582AFD0949812B8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -422,6 +422,7 @@
 			children = (
 				F9321929B13A4493330BFB8C0C1A8A6E /* Frameworks */,
 			);
+			name = FirebaseCore;
 			path = FirebaseCore;
 			sourceTree = "<group>";
 		};
@@ -689,6 +690,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+=======
+		95A11EEBB61C4488E9DC66EA161E0450 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A88A78F6E0BDF07124B89353DEB9BDE8 /* CFNetwork.framework */,
+				E15F7B627BB9AB386FA61FF6CA2414F8 /* Foundation.framework */,
+				4248F9AFE63BC9F384EF82BCA5CC4F4E /* Security.framework */,
+				85A7BEEB8703DC40A1764B80F1C54804 /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+>>>>>>> b13cfc263729802b153855311cc3a71b4f917387
 		9B7B4C22A6A5C9920ED4DE28B15DEE53 /* Kingfisher */ = {
 			isa = PBXGroup;
 			children = (

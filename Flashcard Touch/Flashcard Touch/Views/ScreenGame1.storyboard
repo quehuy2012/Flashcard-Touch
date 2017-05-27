@@ -21,9 +21,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MLd-07-zb8">
-                                <rect key="frame" x="0.0" y="30" width="320" height="498"/>
+                                <rect key="frame" x="0.0" y="30" width="320" height="538"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q4U-Bz-0X7">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="Q4U-Bz-0X7">
                                     <size key="itemSize" width="83" height="71"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -56,7 +56,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MLd-07-zb8" firstAttribute="leading" secondItem="1zW-dC-npk" secondAttribute="leading" id="222-Q1-Yq4"/>
-                            <constraint firstItem="DbM-UF-dbT" firstAttribute="top" secondItem="MLd-07-zb8" secondAttribute="bottom" constant="40" id="Ecp-3m-IHs"/>
+                            <constraint firstItem="DbM-UF-dbT" firstAttribute="top" secondItem="MLd-07-zb8" secondAttribute="bottom" id="Ecp-3m-IHs"/>
                             <constraint firstAttribute="trailing" secondItem="MLd-07-zb8" secondAttribute="trailing" id="bQ1-YG-NPH"/>
                             <constraint firstItem="MLd-07-zb8" firstAttribute="top" secondItem="En8-HK-OpB" secondAttribute="bottom" constant="10" id="kH5-o9-otk"/>
                         </constraints>

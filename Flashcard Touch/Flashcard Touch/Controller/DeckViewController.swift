@@ -27,6 +27,8 @@ class DeckViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.141602397, green: 0.8048137426, blue: 1, alpha: 1)
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,20 +73,26 @@ extension DeckViewController:UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let deck = decks[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DeckViewControllerTableViewCell", for: indexPath) as! DeckViewControllerTableViewCell
         
-        let nameDeck = cell.viewWithTag(5) as! UILabel
-        let dateDeck = cell.viewWithTag(10) as! UILabel
-        let countCard = cell.viewWithTag(20) as! UILabel
+//        let nameDeck = cell.viewWithTag(5) as! UILabel
+//        let dateDeck = cell.viewWithTag(10) as! UILabel
+//        let countCard = cell.viewWithTag(20) as! UILabel
         
-        nameDeck.text = deck.name
+//        nameDeck.text = deck.name
+        
+        cell.nameDeck.text = deck.name
         if deck.lastActivity != nil {
-            dateDeck.text = convertDateToString(deck.lastActivity!)
+            cell.lastActivity.text = convertDateToString(deck.lastActivity!)
         } else{
             let today = Date()
-            dateDeck.text = convertDateToString(today)
+            cell.lastActivity.text = convertDateToString(today)
         }
-        countCard.text = "\(countCardInDeck(id: deck.identifier))"
+        cell.count.text = "\(countCardInDeck(id: deck.identifier))"
+        
+//        cell.layer.borderWidth = 1
+//        cell.layer.cornerRadius = 5
+//        cell.layer.borderColor = UIColor.black.cgColor
         
         return cell
     }
