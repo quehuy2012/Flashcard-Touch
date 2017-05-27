@@ -24,10 +24,16 @@ class DeckDetailViewController: UIViewController {
     var deck:Deck!
     var selectedDeckIndex = 0
     
+    //height for table view cell
+    let cellSpacingHeight: CGFloat = 5
+    
     //MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
+        tableView.delegate = self
         
         for (index,d) in decks.enumerated() {
             if d.identifier == deck.identifier {
@@ -105,6 +111,16 @@ class DeckDetailViewController: UIViewController {
         
         navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    @IBAction func PlayGame1Button(_ sender: Any) {
+        print("playgame")
+        let viewController = Game1ViewController.instantiateFrom(appStoryboard: .ScreenGame1)
+        viewController.deck = decks[selectedDeckIndex]
+        //truyền mảng local card đang sét của bộ deckID nào đó 
+        viewController.localCard = localCard
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -117,7 +133,7 @@ class DeckDetailViewController: UIViewController {
 
 }
 
-extension DeckDetailViewController: UITableViewDataSource {
+extension DeckDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -128,7 +144,7 @@ extension DeckDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let card = localCard[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
         
         let viewBackground = cell.viewWithTag(10) as UIView!
         let term = cell.viewWithTag(20) as! UILabel
@@ -147,8 +163,13 @@ extension DeckDetailViewController: UITableViewDataSource {
         term.text = card.term
         definition.text = card.definition
         
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 10
+        
+        
         return cell
     }
+    
 }
 
 extension DeckDetailViewController: DeckDetailAddEditViewControllerDelegate {

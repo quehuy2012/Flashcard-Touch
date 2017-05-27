@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "02D8DD082C726D444FA4E0B54EE64E07"
+               BlueprintIdentifier = "E11671F5982E681A6B92F17677436003"
                BuildableName = "Pods_Flashcard_Touch.framework"
                BlueprintName = "Pods-Flashcard Touch"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02D8DD082C726D444FA4E0B54EE64E07"
+            BlueprintIdentifier = "E11671F5982E681A6B92F17677436003"
             BuildableName = "Pods_Flashcard_Touch.framework"
             BlueprintName = "Pods-Flashcard Touch"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02D8DD082C726D444FA4E0B54EE64E07"
-            BuildableName = "Pods_Flashcard_Touch.framework"
-            BlueprintName = "Pods-Flashcard Touch"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
