@@ -56,13 +56,13 @@ class DeckDetailViewController: UIViewController {
         let decksName = decks.map{ $0.name }
         
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.4321628213, green: 0.337002188, blue: 0.9065725207, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.141602397, green: 0.8048137426, blue: 1, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
         menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, containerView: self.navigationController!.view, title: deck.name, items: decksName as [AnyObject])
         menuView.cellHeight = 50
         menuView.cellBackgroundColor = self.navigationController?.navigationBar.barTintColor
-        menuView.cellSelectionColor = #colorLiteral(red: 0.5347885489, green: 0.3542699218, blue: 0.9699434638, alpha: 1)
+        menuView.cellSelectionColor = #colorLiteral(red: 0.141602397, green: 0.8048137426, blue: 1, alpha: 1)
         menuView.shouldKeepSelectedCellColor = true
         menuView.cellTextLabelColor = UIColor.white
         menuView.cellTextLabelFont = UIFont(name: "Avenir-Heavy", size: 17)
@@ -92,6 +92,7 @@ class DeckDetailViewController: UIViewController {
         }
         
         self.navigationItem.titleView = menuView
+        self.navigationController?.navigationBar.tintColor = UIColor.white;
     }
 
     override func didReceiveMemoryWarning() {
@@ -144,27 +145,17 @@ extension DeckDetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let card = localCard[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DeckDetailViewControllerTableViewCell", for: indexPath) as! DeckDetailViewControllerTableViewCell
         
-        let viewBackground = cell.viewWithTag(10) as UIView!
-        let term = cell.viewWithTag(20) as! UILabel
-        let definition = cell.viewWithTag(30) as! UILabel
+//        let viewBackground = cell.viewWithTag(10) as UIView!
+//        let term = cell.viewWithTag(20) as! UILabel
+//        let definition = cell.viewWithTag(30) as! UILabel
         
-        let randomNum:UInt32 = arc4random_uniform(3) + 1
+        cell.termLabel.text = card.term
+        cell.definition.text = card.definition
         
-        if randomNum%3 == 0{
-            viewBackground?.backgroundColor = UIColor.red
-        } else if randomNum%3 == 1{
-            viewBackground?.backgroundColor = UIColor.green
-        } else{
-            viewBackground?.backgroundColor = UIColor.purple
-        }
-        term.textColor = UIColor.white
-        term.text = card.term
-        definition.text = card.definition
-        
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 10
+//        cell.layer.borderWidth = 1
+//        cell.layer.cornerRadius = 10
         
         
         return cell

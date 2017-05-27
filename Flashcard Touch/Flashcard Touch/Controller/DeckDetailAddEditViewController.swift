@@ -88,6 +88,11 @@ extension DeckDetailAddEditViewController : UITableViewDelegate, UITableViewData
         cell.delegate = self
         cell.termTextField.inputAccessoryView = keyboardAccessoryView
         cell.giaiNghiaTextField.inputAccessoryView = keyboardAccessoryView
+        
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 5
+        cell.layer.borderColor = UIColor.black.cgColor
+        
         return cell
     }
     
