@@ -177,13 +177,14 @@ extension Game1ViewController: UICollectionViewDelegate, UICollectionViewDataSou
             
             let cell = collectionView.cellForItem(at: indexPath)!
             
-            UIView.animate(withDuration: 0.5, delay: 0,options: UIViewAnimationOptions.curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.2, delay: 0,options: UIViewAnimationOptions.curveEaseIn, animations: {
                 cell.backgroundColor = UIColor.green
             }, completion: { (finished) in
-                cell1.backgroundColor = UIColor.clear
-                cell.backgroundColor = UIColor.clear
                 
-                
+                UIView.animate(withDuration: 0.2, animations: {
+                    cell1.backgroundColor = UIColor.clear
+                    cell.backgroundColor = UIColor.clear
+                })
             });
 //            UIView.animate(withDuration: 1.0, animations: { 
 //                cell.backgroundColor = UIColor.green
