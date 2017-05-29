@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		102219691EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102219681EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift */; };
 		1022196B1EB9EF6700B8BE8B /* DeckDetailAddEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1022196A1EB9EF6700B8BE8B /* DeckDetailAddEditTableViewCell.swift */; };
+		213A901F1EDBC1BC0012DD14 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 213A90131EDBC1BC0012DD14 /* libGoogleAnalytics.a */; };
+		213D16281EDADC1A00EC3764 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D16271EDADC1A00EC3764 /* CoreData.framework */; };
+		213D162A1EDADC2100EC3764 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D16291EDADC2100EC3764 /* SystemConfiguration.framework */; };
 		213DCCE51EB98AC7009487C9 /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DCCE41EB98AC7009487C9 /* DeckViewController.swift */; };
 		700DF3CF1ED48BCD005D22FE /* DeckViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700DF3CE1ED48BCD005D22FE /* DeckViewControllerTableViewCell.swift */; };
 		700DF3D11ED49A77005D22FE /* DeckDetailViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700DF3D01ED49A77005D22FE /* DeckDetailViewControllerTableViewCell.swift */; };
@@ -50,6 +53,20 @@
 /* Begin PBXFileReference section */
 		102219681EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckDetailAddEditViewController.swift; sourceTree = "<group>"; };
 		1022196A1EB9EF6700B8BE8B /* DeckDetailAddEditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckDetailAddEditTableViewCell.swift; sourceTree = "<group>"; };
+		213A90131EDBC1BC0012DD14 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
+		213A90151EDBC1BC0012DD14 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		213A90161EDBC1BC0012DD14 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		213A90171EDBC1BC0012DD14 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		213A90181EDBC1BC0012DD14 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		213A90191EDBC1BC0012DD14 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		213A901A1EDBC1BC0012DD14 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		213A901B1EDBC1BC0012DD14 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		213A901C1EDBC1BC0012DD14 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		213A901D1EDBC1BC0012DD14 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		213A901E1EDBC1BC0012DD14 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		213A90201EDBC26D0012DD14 /* Flashcard_Touch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flashcard_Touch-Bridging-Header.h"; sourceTree = "<group>"; };
+		213D16271EDADC1A00EC3764 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		213D16291EDADC2100EC3764 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		213DCCE41EB98AC7009487C9 /* DeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = "<group>"; };
 		4F0AF1B0C70ABE0029145141 /* Pods-Flashcard Touch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashcard Touch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flashcard Touch/Pods-Flashcard Touch.release.xcconfig"; sourceTree = "<group>"; };
 		700DF3CE1ED48BCD005D22FE /* DeckViewControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckViewControllerTableViewCell.swift; sourceTree = "<group>"; };
@@ -89,7 +106,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				213D162A1EDADC2100EC3764 /* SystemConfiguration.framework in Frameworks */,
+				213D16281EDADC1A00EC3764 /* CoreData.framework in Frameworks */,
 				ABC8A8021E9D900CFBEAFD60 /* Pods_Flashcard_Touch.framework in Frameworks */,
+				213A901F1EDBC1BC0012DD14 /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +123,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		213A90111EDBC1BC0012DD14 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				213A90121EDBC1BC0012DD14 /* Libraries */,
+				213A90141EDBC1BC0012DD14 /* Sources */,
+			);
+			path = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
+		213A90121EDBC1BC0012DD14 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				213A90131EDBC1BC0012DD14 /* libGoogleAnalytics.a */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		213A90141EDBC1BC0012DD14 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				213A90151EDBC1BC0012DD14 /* GAI.h */,
+				213A90161EDBC1BC0012DD14 /* GAIDictionaryBuilder.h */,
+				213A90171EDBC1BC0012DD14 /* GAIEcommerceFields.h */,
+				213A90181EDBC1BC0012DD14 /* GAIEcommerceProduct.h */,
+				213A90191EDBC1BC0012DD14 /* GAIEcommerceProductAction.h */,
+				213A901A1EDBC1BC0012DD14 /* GAIEcommercePromotion.h */,
+				213A901B1EDBC1BC0012DD14 /* GAIFields.h */,
+				213A901C1EDBC1BC0012DD14 /* GAILogger.h */,
+				213A901D1EDBC1BC0012DD14 /* GAITrackedViewController.h */,
+				213A901E1EDBC1BC0012DD14 /* GAITracker.h */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		213D16191EDADB2D00EC3764 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				213A90111EDBC1BC0012DD14 /* GoogleAnalytics */,
+				213A90201EDBC26D0012DD14 /* Flashcard_Touch-Bridging-Header.h */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		705509D81EC61BC100BBB572 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +220,7 @@
 		7063A8C41EB47A6F007C6DD3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				213D16191EDADB2D00EC3764 /* Library */,
 				7063A8C51EB47A7E007C6DD3 /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -250,6 +314,8 @@
 		F6AEBB9FC2BCE5156CEC1C45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				213D16291EDADC2100EC3764 /* SystemConfiguration.framework */,
+				213D16271EDADC1A00EC3764 /* CoreData.framework */,
 				DA102AB2EC9883AB124AAB9F /* Pods_Flashcard_Touch.framework */,
 			);
 			name = Frameworks;
@@ -378,7 +444,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		AF2F414EE66A660B3C586A1C /* [CP] Embed Pods Frameworks */ = {
@@ -577,8 +643,15 @@
 				INFOPLIST_FILE = "Flashcard Touch/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Flashcard\\ Touch/Resource/Library/Google\\ Analystic",
+					"$(PROJECT_DIR)/Flashcard\\ Touch/Resource/Library/GoogleAnalytics/Libraries",
+					"$(PROJECT_DIR)/Flashcard\\ Touch/Resource/Library/GoogleAnalytics/Libraries",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.VNG.Huy.Flashcard-Touch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/victorluu/Desktop/Flashcard-Touch-master/Flashcard Touch/Flashcard Touch/Resource/Library/Flashcard_Touch-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -592,8 +665,15 @@
 				INFOPLIST_FILE = "Flashcard Touch/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Flashcard\\ Touch/Resource/Library/Google\\ Analystic",
+					"$(PROJECT_DIR)/Flashcard\\ Touch/Resource/Library/GoogleAnalytics/Libraries",
+					"$(PROJECT_DIR)/Flashcard\\ Touch/Resource/Library/GoogleAnalytics/Libraries",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.VNG.Huy.Flashcard-Touch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/victorluu/Desktop/Flashcard-Touch-master/Flashcard Touch/Flashcard Touch/Resource/Library/Flashcard_Touch-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

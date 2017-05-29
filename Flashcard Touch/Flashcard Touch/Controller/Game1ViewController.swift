@@ -112,6 +112,18 @@ class Game1ViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        // [START screen_view_hit_swift]
+        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+        tracker.set(kGAIScreenName, value: "Game 1 View Controller")
+        
+        guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
+        tracker.send(builder.build() as [NSObject : AnyObject])
+        // [END screen_view_hit_swift]
+    }
+    
     
     //random mảng trả về vị trí của phần tử đó trong mảng
     func randomSerm() -> UInt32 {
