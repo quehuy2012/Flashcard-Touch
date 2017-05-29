@@ -153,6 +153,20 @@ class DeckDetailViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
+    @IBAction func PlayStackGameButton(_ sender: UIButton) {
+        // [START custom_event_swift]
+        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+        guard let event = GAIDictionaryBuilder.createEvent(withCategory: "Deck Detail", action: "Switch to Learn Card (Game 1)", label: nil, value: nil) else { return }
+        tracker.send(event.build() as [NSObject : AnyObject])
+        // [END custom_event_swift]
+        
+        let viewController = GameStackViewController.instantiateFrom(appStoryboard: .GameStack)
+        viewController.originalCards = deck.cards
+        
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

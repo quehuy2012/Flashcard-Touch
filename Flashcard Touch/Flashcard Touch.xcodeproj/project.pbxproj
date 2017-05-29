@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		102219691EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102219681EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift */; };
 		1022196B1EB9EF6700B8BE8B /* DeckDetailAddEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1022196A1EB9EF6700B8BE8B /* DeckDetailAddEditTableViewCell.swift */; };
+		10CB1B581EDC138100E6A598 /* GameStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB1B571EDC138100E6A598 /* GameStackViewController.swift */; };
+		10CB1B5C1EDC165300E6A598 /* GameStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10CB1B5B1EDC165300E6A598 /* GameStack.storyboard */; };
+		10CB1B5F1EDC190000E6A598 /* CardOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10CB1B5E1EDC190000E6A598 /* CardOverlayView.xib */; };
+		10CB1B611EDC192A00E6A598 /* CardOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB1B601EDC192A00E6A598 /* CardOverlayView.swift */; };
+		10CB1B651EDC260900E6A598 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB1B641EDC260900E6A598 /* FlashCardView.swift */; };
+		10CB1B671EDC262400E6A598 /* FlashCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10CB1B661EDC262400E6A598 /* FlashCardView.xib */; };
 		213A901F1EDBC1BC0012DD14 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 213A90131EDBC1BC0012DD14 /* libGoogleAnalytics.a */; };
 		213D16281EDADC1A00EC3764 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D16271EDADC1A00EC3764 /* CoreData.framework */; };
 		213D162A1EDADC2100EC3764 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D16291EDADC2100EC3764 /* SystemConfiguration.framework */; };
@@ -53,6 +59,12 @@
 /* Begin PBXFileReference section */
 		102219681EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckDetailAddEditViewController.swift; sourceTree = "<group>"; };
 		1022196A1EB9EF6700B8BE8B /* DeckDetailAddEditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckDetailAddEditTableViewCell.swift; sourceTree = "<group>"; };
+		10CB1B571EDC138100E6A598 /* GameStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStackViewController.swift; sourceTree = "<group>"; };
+		10CB1B5B1EDC165300E6A598 /* GameStack.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameStack.storyboard; sourceTree = "<group>"; };
+		10CB1B5E1EDC190000E6A598 /* CardOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardOverlayView.xib; sourceTree = "<group>"; };
+		10CB1B601EDC192A00E6A598 /* CardOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardOverlayView.swift; sourceTree = "<group>"; };
+		10CB1B641EDC260900E6A598 /* FlashCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
+		10CB1B661EDC262400E6A598 /* FlashCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlashCardView.xib; sourceTree = "<group>"; };
 		213A90131EDBC1BC0012DD14 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		213A90151EDBC1BC0012DD14 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		213A90161EDBC1BC0012DD14 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
@@ -123,6 +135,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10CB1B5D1EDC184D00E6A598 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				10CB1B5E1EDC190000E6A598 /* CardOverlayView.xib */,
+				10CB1B601EDC192A00E6A598 /* CardOverlayView.swift */,
+				10CB1B661EDC262400E6A598 /* FlashCardView.xib */,
+				10CB1B641EDC260900E6A598 /* FlashCardView.swift */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
 		213A90111EDBC1BC0012DD14 /* GoogleAnalytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +202,7 @@
 			children = (
 				7060DA031EC8B27C00FD03F2 /* Game1ViewController.swift */,
 				7060DA051EC98B6D00FD03F2 /* Game1CollectionViewCell.swift */,
+				10CB1B571EDC138100E6A598 /* GameStackViewController.swift */,
 			);
 			name = Game1;
 			sourceTree = "<group>";
@@ -282,6 +306,7 @@
 		C85C327B1EB2EAAB00BB51AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				10CB1B5D1EDC184D00E6A598 /* Custom */,
 				C85C327C1EB2EAD700BB51AA /* Storyboards */,
 			);
 			path = Views;
@@ -298,6 +323,7 @@
 				7063A8BC1EB4731F007C6DD3 /* DeckDetail.storyboard */,
 				705509D61EC61A6F00BBB572 /* LoginApp.storyboard */,
 				7060DA001EC89AD800FD03F2 /* ScreenGame1.storyboard */,
+				10CB1B5B1EDC165300E6A598 /* GameStack.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -412,7 +438,10 @@
 				C85C32821EB2EBC000BB51AA /* Stats.storyboard in Resources */,
 				C85C32621EB2E9F300BB51AA /* LaunchScreen.storyboard in Resources */,
 				705509DA1EC6209600BBB572 /* GoogleService-Info.plist in Resources */,
+				10CB1B5F1EDC190000E6A598 /* CardOverlayView.xib in Resources */,
+				10CB1B5C1EDC165300E6A598 /* GameStack.storyboard in Resources */,
 				C85C327E1EB2EB7C00BB51AA /* Decks.storyboard in Resources */,
+				10CB1B671EDC262400E6A598 /* FlashCardView.xib in Resources */,
 				C85C325D1EB2E9F300BB51AA /* Main.storyboard in Resources */,
 				705509D71EC61A6F00BBB572 /* LoginApp.storyboard in Resources */,
 				7063A8C61EB47A7E007C6DD3 /* Assets.xcassets in Resources */,
@@ -487,6 +516,7 @@
 				7063A8CA1EB47BC6007C6DD3 /* Deck.swift in Sources */,
 				C85C32861EB2ED3700BB51AA /* Extension.swift in Sources */,
 				700DF3D11ED49A77005D22FE /* DeckDetailViewControllerTableViewCell.swift in Sources */,
+				10CB1B611EDC192A00E6A598 /* CardOverlayView.swift in Sources */,
 				C85C32841EB2ED2100BB51AA /* AppStoryboard.swift in Sources */,
 				7063A8C81EB47BAE007C6DD3 /* Card.swift in Sources */,
 				7063A8CE1EB47F28007C6DD3 /* SeedData.swift in Sources */,
@@ -496,6 +526,8 @@
 				70B35F4F1EC6286400AD1D47 /* LoginGoogleViewController.swift in Sources */,
 				7063A8CC1EB47BDE007C6DD3 /* Folder.swift in Sources */,
 				700DF3CF1ED48BCD005D22FE /* DeckViewControllerTableViewCell.swift in Sources */,
+				10CB1B581EDC138100E6A598 /* GameStackViewController.swift in Sources */,
+				10CB1B651EDC260900E6A598 /* FlashCardView.swift in Sources */,
 				102219691EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift in Sources */,
 				213DCCE51EB98AC7009487C9 /* DeckViewController.swift in Sources */,
 				7060DA061EC98B6D00FD03F2 /* Game1CollectionViewCell.swift in Sources */,

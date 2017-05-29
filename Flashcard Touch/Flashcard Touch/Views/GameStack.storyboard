@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vhB-Zd-p6l">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Stack-->
+        <scene sceneID="UDQ-9R-9me">
+            <objects>
+                <viewController storyboardIdentifier="GameStackViewController" title="Stack" id="cIJ-aW-BCR" customClass="GameStackViewController" customModule="Flashcard_Touch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Scp-Hy-BWK"/>
+                        <viewControllerLayoutGuide type="bottom" id="PB6-oo-ja1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c69-Zi-PO4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWh-tz-ynF" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="20" y="84" width="335" height="500"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLV-WW-Ykv">
+                                <rect key="frame" x="127" y="595" width="120" height="52"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4r-W2-3Zw">
+                                        <rect key="frame" x="0.0" y="10" width="32" height="32"/>
+                                        <state key="normal" image="btn_skip_pressed"/>
+                                        <connections>
+                                            <action selector="skipButtonTapped:" destination="cIJ-aW-BCR" eventType="touchUpInside" id="ekR-QT-6VQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jl4-F1-uqA">
+                                        <rect key="frame" x="88" y="10" width="32" height="32"/>
+                                        <state key="normal" image="btn_like_pressed"/>
+                                        <connections>
+                                            <action selector="reviewButtonTapped:" destination="cIJ-aW-BCR" eventType="touchUpInside" id="SyL-rK-aFP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="j4r-W2-3Zw" firstAttribute="leading" secondItem="FLV-WW-Ykv" secondAttribute="leading" id="Rk9-Eh-vuU"/>
+                                    <constraint firstAttribute="height" constant="52" id="Sng-9D-HnO"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jl4-F1-uqA" secondAttribute="trailing" id="crZ-tR-9Lp"/>
+                                    <constraint firstItem="j4r-W2-3Zw" firstAttribute="centerY" secondItem="FLV-WW-Ykv" secondAttribute="centerY" id="oUM-J7-QJU"/>
+                                    <constraint firstItem="Jl4-F1-uqA" firstAttribute="centerY" secondItem="FLV-WW-Ykv" secondAttribute="centerY" id="uae-54-goc"/>
+                                    <constraint firstAttribute="width" constant="120" id="vLJ-cY-232"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZWh-tz-ynF" firstAttribute="leading" secondItem="c69-Zi-PO4" secondAttribute="leading" constant="20" id="IGu-mX-zj4"/>
+                            <constraint firstItem="FLV-WW-Ykv" firstAttribute="centerX" secondItem="c69-Zi-PO4" secondAttribute="centerX" id="JbO-Tz-qlm"/>
+                            <constraint firstAttribute="trailing" secondItem="ZWh-tz-ynF" secondAttribute="trailing" constant="20" id="VxF-Vs-QrQ"/>
+                            <constraint firstItem="FLV-WW-Ykv" firstAttribute="top" secondItem="ZWh-tz-ynF" secondAttribute="bottom" constant="11" id="Z9q-00-LkL"/>
+                            <constraint firstItem="ZWh-tz-ynF" firstAttribute="top" secondItem="Scp-Hy-BWK" secondAttribute="bottom" constant="20" id="lMt-rw-SlO"/>
+                            <constraint firstItem="PB6-oo-ja1" firstAttribute="top" secondItem="FLV-WW-Ykv" secondAttribute="bottom" constant="20" id="vMf-1K-Hxc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="niN-uA-ysg">
+                        <barButtonItem key="rightBarButtonItem" image="btn_undo" id="ENM-9t-mip">
+                            <connections>
+                                <action selector="redoButtonTapped:" destination="cIJ-aW-BCR" id="4OS-Wx-5k8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="kolodaView" destination="ZWh-tz-ynF" id="xdA-w0-E0f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M61-Oh-bJp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1004" y="84.107946026986511"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hbH-qw-5La">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vhB-Zd-p6l" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IVf-zO-xkc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cIJ-aW-BCR" kind="relationship" relationship="rootViewController" id="Rde-8p-guz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n8X-lH-wEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.799999999999997" y="84.107946026986511"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btn_like_pressed" width="32" height="32"/>
+        <image name="btn_skip_pressed" width="32" height="32"/>
+        <image name="btn_undo" width="21" height="21"/>
+    </resources>
+</document>
