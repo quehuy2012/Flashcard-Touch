@@ -20,6 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        
+        // Google Analystic
+        guard let gai = GAI.sharedInstance() else {
+            assert(false, "Google Analytics not configured correctly")
+        }
+        gai.tracker(withTrackingId: "UA-100062579-1")
+        // Optional: automatically report uncaught exceptions.
+        gai.trackUncaughtExceptions = true
+        
+        // Optional: set Logger to VERBOSE for debug information.
+        // Remove before app release.
+        gai.logger.logLevel = .verbose;
+        
         return true
     }
     
@@ -35,6 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        super.init()
 //        FIRApp.configure()
 //    }
+    
+    // MARK: *** Google Analystic UA-100062579-1
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

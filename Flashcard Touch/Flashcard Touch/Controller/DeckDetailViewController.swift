@@ -73,6 +73,13 @@ class DeckDetailViewController: UIViewController {
         menuView.maskBackgroundOpacity = 0.3
         
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
+            
+            // [START custom_event_swift]
+            guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+            guard let event = GAIDictionaryBuilder.createEvent(withCategory: "Deck Detail", action: "Switch to other Deck", label: nil, value: nil) else { return }
+            tracker.send(event.build() as [NSObject : AnyObject])
+            // [END custom_event_swift]
+            
             print("Did select item at index: \(indexPath)")
             
             let temp = decks[indexPath]
@@ -95,6 +102,18 @@ class DeckDetailViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.white;
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        // [START screen_view_hit_swift]
+        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+        tracker.set(kGAIScreenName, value: "Deck Detail View Controller")
+        
+        guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
+        tracker.send(builder.build() as [NSObject : AnyObject])
+        // [END screen_view_hit_swift]
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -104,6 +123,12 @@ class DeckDetailViewController: UIViewController {
     // MARK: UI Event
     
     @IBAction func editTapped(_ sender: AnyObject) {
+        // [START custom_event_swift]
+        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+        guard let event = GAIDictionaryBuilder.createEvent(withCategory: "Deck Detail", action: "Switch to Edit Deck", label: nil, value: nil) else { return }
+        tracker.send(event.build() as [NSObject : AnyObject])
+        // [END custom_event_swift]
+        
         print("Edit tapped")
         let viewController = DeckDetailAddEditViewController.instantiateFrom(appStoryboard: .DeckDetail)
         viewController.cardt = localCard
@@ -114,6 +139,12 @@ class DeckDetailViewController: UIViewController {
     }
     
     @IBAction func PlayGame1Button(_ sender: Any) {
+        // [START custom_event_swift]
+        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+        guard let event = GAIDictionaryBuilder.createEvent(withCategory: "Deck Detail", action: "Switch to Learn Card (Game 1)", label: nil, value: nil) else { return }
+        tracker.send(event.build() as [NSObject : AnyObject])
+        // [END custom_event_swift]
+        
         print("playgame")
         let viewController = Game1ViewController.instantiateFrom(appStoryboard: .ScreenGame1)
         viewController.deck = decks[selectedDeckIndex]
