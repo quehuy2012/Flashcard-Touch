@@ -207,8 +207,10 @@ extension Game1ViewController: UICollectionViewDelegate, UICollectionViewDataSou
             for i in self.shuffedCardIndex {
                 if (i.termIndex == self.chooseFrist && i.definitionIndex == indexPath.row) || (i.termIndex == indexPath.row && i.definitionIndex == self.chooseFrist) {
                     
-                    cell1.isHidden = true
-                    cell.isHidden = true
+                    UIView.animate(withDuration: 0.2, delay: 0.1, options: .curveEaseOut, animations: { 
+                        cell1.alpha = 0;
+                        cell.alpha = 0;
+                    }, completion: nil)
                     self.chooseFrist = -1
                     return
                 }
