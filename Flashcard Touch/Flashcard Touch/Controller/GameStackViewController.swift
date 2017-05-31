@@ -8,6 +8,7 @@
 
 import UIKit
 import Koloda
+import SCLAlertView
 
 private var numberOfCards: Int = 5
 
@@ -24,9 +25,7 @@ class GameStackViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+
         currentCards = originalCards
         
         kolodaView.dataSource = self
@@ -57,6 +56,21 @@ class GameStackViewController: UIViewController {
 extension GameStackViewController: KolodaViewDelegate {
     
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+        if (currentCards.count == 0) {
+            let appearance = SCLAlertView.SCLAppearance(showCloseButton: false)
+            let alert = SCLAlertView(appearance: appearance)
+            
+            _ = alert.addButton("Try again") {
+                self.currentCards = self.originalCards
+                self.kolodaView.resetCurrentCardIndex()
+            }
+            
+            _ = alert.addButton("Close", action: { 
+                self.navigationController?.popViewController(animated: true)
+            })
+            _ = alert.showSuccess("Finished", subTitle: "")
+        }
+        
         kolodaView.resetCurrentCardIndex()
     }
     
@@ -76,6 +90,8 @@ extension GameStackViewController: KolodaViewDelegate {
         case .left:
             currentCards.remove(at: index)
             koloda.removeCardInIndexRange(index ..< index+1, animated: true)
+        case .right:
+            break
         default:
             break
         }

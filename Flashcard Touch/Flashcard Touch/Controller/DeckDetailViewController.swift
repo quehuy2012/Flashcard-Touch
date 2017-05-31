@@ -194,6 +194,8 @@ extension DeckDetailViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DeckDetailViewControllerTableViewCell", for: indexPath) as! DeckDetailViewControllerTableViewCell
         cell.delegate = self
         
+        cell.setMark(card.marked, animated: false)
+        
         cell.termLabel.text = card.term
         cell.definition.text = card.definition
         
