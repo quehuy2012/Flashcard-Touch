@@ -7,12 +7,34 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class DeckDetailViewControllerTableViewCell: UITableViewCell {
+class DeckDetailViewControllerTableViewCell: SwipeTableViewCell {
 
     @IBOutlet weak var termLabel: UILabel!
     @IBOutlet weak var viewScreen: UIView!
     @IBOutlet weak var definition: UILabel!
+    @IBOutlet weak var markImageView: UIImageView!
+    
+    var mark = false {
+        didSet {
+            markImageView.image = mark ? #imageLiteral(resourceName: "Mark") : #imageLiteral(resourceName: "Unmark")
+        }
+    }
+    
+    func setMark(_ mark: Bool, animated: Bool) {
+        self.mark = mark
+        
+        if (animated) {
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseIn], animations: {
+                self.markImageView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            }, completion: { (finsihed) in
+                UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseOut], animations: { 
+                    self.markImageView.transform = CGAffineTransform.identity
+                }, completion: nil)
+            })
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

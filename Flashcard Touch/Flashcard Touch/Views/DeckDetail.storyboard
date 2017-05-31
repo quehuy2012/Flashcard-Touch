@@ -138,7 +138,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starNoColor" translatesAutoresizingMaskIntoConstraints="NO" id="3eW-mz-hg4">
-                                                            <rect key="frame" x="148" y="8" width="20" height="20"/>
+                                                            <rect key="frame" x="148" y="39.5" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="Bbq-q2-wLi"/>
                                                                 <constraint firstAttribute="height" constant="20" id="s85-X3-6gh"/>
@@ -147,11 +147,11 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="PLU-s9-WZl" secondAttribute="bottom" id="0gT-SE-4ix"/>
+                                                        <constraint firstItem="3eW-mz-hg4" firstAttribute="centerY" secondItem="8C7-cE-UmI" secondAttribute="centerY" id="5hb-5h-abE"/>
                                                         <constraint firstItem="3eW-mz-hg4" firstAttribute="leading" secondItem="PLU-s9-WZl" secondAttribute="trailing" constant="8" id="6gu-4G-X1m"/>
-                                                        <constraint firstAttribute="trailing" secondItem="3eW-mz-hg4" secondAttribute="trailing" constant="8" id="AKr-M5-Jqn"/>
                                                         <constraint firstItem="PLU-s9-WZl" firstAttribute="top" secondItem="8C7-cE-UmI" secondAttribute="top" id="IBQ-bd-u5a"/>
                                                         <constraint firstAttribute="width" constant="176" id="RxZ-fW-Iim"/>
-                                                        <constraint firstItem="3eW-mz-hg4" firstAttribute="top" secondItem="8C7-cE-UmI" secondAttribute="top" constant="8" id="h5d-yE-3zl"/>
+                                                        <constraint firstAttribute="trailing" secondItem="3eW-mz-hg4" secondAttribute="trailing" constant="8" id="l5U-GG-tiQ"/>
                                                         <constraint firstItem="PLU-s9-WZl" firstAttribute="leading" secondItem="8C7-cE-UmI" secondAttribute="leading" id="sff-DS-DzB"/>
                                                     </constraints>
                                                 </view>
@@ -171,6 +171,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="definition" destination="PLU-s9-WZl" id="z1c-FN-Uum"/>
+                                            <outlet property="markImageView" destination="3eW-mz-hg4" id="AaI-Ne-K0v"/>
                                             <outlet property="termLabel" destination="YsL-Sr-Van" id="cBq-yI-VYM"/>
                                             <outlet property="viewScreen" destination="nHh-HP-zCn" id="s4W-q1-lZJ"/>
                                         </connections>

@@ -63,6 +63,7 @@ PODS:
   - PagingMenuController (1.4.0)
   - pop (1.0.9)
   - SCLAlertView (0.7.0)
+  - SwipeCellKit (1.8.0)
 
 DEPENDENCIES:
   - BTNavigationDropdownMenu (from `https://github.com/PhamBaTho/BTNavigationDropdownMenu.git`, branch `swift-3.0`)
@@ -75,6 +76,7 @@ DEPENDENCIES:
   - Koloda
   - PagingMenuController
   - SCLAlertView
+  - SwipeCellKit
 
 EXTERNAL SOURCES:
   BTNavigationDropdownMenu:
@@ -109,7 +111,8 @@ SPEC CHECKSUMS:
   PagingMenuController: 79a9ce7472839d9afd0a6b879af6132822644a47
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
+  SwipeCellKit: 01a58bf7e63d5df09aedd161828833944c4c333c
 
-PODFILE CHECKSUM: 1fbf11432d0a0c695e909a000c6efbee622610de
+PODFILE CHECKSUM: 3ba272339a3eaba78b1fde33f61f52f4339b1e72
 
 COCOAPODS: 1.0.1

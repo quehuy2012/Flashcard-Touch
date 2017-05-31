@@ -232,10 +232,10 @@
 			isa = PBXGroup;
 			children = (
 				1022196A1EB9EF6700B8BE8B /* DeckDetailAddEditTableViewCell.swift */,
-				102219681EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift */,
 				700DF3D01ED49A77005D22FE /* DeckDetailViewControllerTableViewCell.swift */,
-				7063A8C21EB478C7007C6DD3 /* DeckDetailViewController.swift */,
 				700DF3CE1ED48BCD005D22FE /* DeckViewControllerTableViewCell.swift */,
+				102219681EB9EF4F00B8BE8B /* DeckDetailAddEditViewController.swift */,
+				7063A8C21EB478C7007C6DD3 /* DeckDetailViewController.swift */,
 				213DCCE41EB98AC7009487C9 /* DeckViewController.swift */,
 			);
 			name = DeckDetail;

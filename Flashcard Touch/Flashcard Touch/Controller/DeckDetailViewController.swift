@@ -8,6 +8,7 @@
 
 import UIKit
 import BTNavigationDropdownMenu
+import SwipeCellKit
 
 class DeckDetailViewController: UIViewController {
     
@@ -191,17 +192,10 @@ extension DeckDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let card = localCard[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "DeckDetailViewControllerTableViewCell", for: indexPath) as! DeckDetailViewControllerTableViewCell
-        
-//        let viewBackground = cell.viewWithTag(10) as UIView!
-//        let term = cell.viewWithTag(20) as! UILabel
-//        let definition = cell.viewWithTag(30) as! UILabel
+        cell.delegate = self
         
         cell.termLabel.text = card.term
         cell.definition.text = card.definition
-        
-//        cell.layer.borderWidth = 1
-//        cell.layer.cornerRadius = 10
-        
         
         return cell
     }
@@ -214,5 +208,78 @@ extension DeckDetailViewController: DeckDetailAddEditViewControllerDelegate {
         tableView.reloadData()
         
         navigationController?.popViewController(animated: true)
+    }
+}
+
+extension DeckDetailViewController: SwipeTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        let card = cards[indexPath.row]
+        
+        if orientation == .left {
+            // Làm edit
+            return nil
+        }
+        else {
+            let markAction = SwipeAction(style: .default, title: nil, handler: { (action, indexPath) in
+                let card = cards[indexPath.row]
+                card.marked = !card.marked
+                
+                let cell = tableView.cellForRow(at: indexPath) as! DeckDetailViewControllerTableViewCell
+                cell.setMark(card.marked, animated: true)
+            })
+            
+            markAction.hidesWhenSelected = true
+            markAction.accessibilityLabel = card.marked ? "Unmark" : "Mark"
+            
+            let descriptor: ActionDescriptor = card.marked ? .unmark : .mark
+            configure(action: markAction,with: descriptor)
+            
+            return [markAction]
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeTableOptions {
+        var options = SwipeTableOptions()
+        options.expansionStyle = .selection
+        options.transitionStyle = .border
+        options.buttonSpacing = 11
+        
+        return options
+    }
+    
+    func configure(action: SwipeAction, with descriptor: ActionDescriptor) {
+        action.title = descriptor.title()
+        action.image = descriptor.image()
+        action.backgroundColor = descriptor.color
+    }
+}
+
+enum ActionDescriptor {
+    case edit, mark, unmark
+    
+    func title() -> String {
+        switch self {
+        case .edit: return "Edit"
+        case .mark: return "Mark"
+        case .unmark: return "Unmark"
+        }
+    }
+    
+    func image() -> UIImage? {
+        let name: String
+        
+        switch self {
+        case .edit: name = "Edit"
+        case .mark, .unmark: name = "Unmark"
+        }
+        
+        return UIImage(named: name)
+    }
+    
+    var color: UIColor {
+    switch self {
+    case .mark, .unmark: return #colorLiteral(red: 1, green: 0.8319787979, blue: 0, alpha: 1)
+    case .edit : return #colorLiteral(red: 0, green: 0.732499063, blue: 0.9509658217, alpha: 1)
+    }
     }
 }

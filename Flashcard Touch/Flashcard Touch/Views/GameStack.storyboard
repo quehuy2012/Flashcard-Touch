@@ -42,7 +42,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="j4r-W2-3Zw" firstAttribute="leading" secondItem="FLV-WW-Ykv" secondAttribute="leading" id="Rk9-Eh-vuU"/>
                                     <constraint firstAttribute="height" constant="52" id="Sng-9D-HnO"/>

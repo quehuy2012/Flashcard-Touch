@@ -62,9 +62,13 @@ extension GameStackViewController: KolodaViewDelegate {
     
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-        let flippedCard = Bundle.main.loadNibNamed("FlashCardView", owner: self, options: nil)?[0] as! FlashCardView
-        flippedCard.label.text = displayingTerm ? currentCards[index].definition : currentCards[index].term
-        UIView.transition(from: frontCardView, to: flippedCard, duration: 1, options: .transitionFlipFromLeft, completion: nil)
+        let cardView = koloda.viewForCard(at: index) as! FlashCardView
+        let card = currentCards[index]
+       
+        UIView.transition(with: cardView, duration: 0.4, options: [.transitionFlipFromLeft], animations: {
+            cardView.label.text = self.displayingTerm ? card.definition : card.term
+        }, completion: nil)
+        self.displayingTerm = !self.displayingTerm
     }
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
