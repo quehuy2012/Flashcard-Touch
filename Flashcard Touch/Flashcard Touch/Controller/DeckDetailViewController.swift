@@ -42,8 +42,6 @@ class DeckDetailViewController: UIViewController {
             }
         }
         
-        actionButton.setTitle("Add", for: .normal)
-        
         var sum = 0
         for card in cards{
             if card.deckID == idDeck{
@@ -210,7 +208,7 @@ extension DeckDetailViewController: DeckDetailAddEditViewControllerDelegate {
         localCard = deck.cards
         tableView.reloadData()
         
-        navigationController?.popViewController(animated: true)
+        //navigationController?.popViewController(animated: true)
     }
 }
 

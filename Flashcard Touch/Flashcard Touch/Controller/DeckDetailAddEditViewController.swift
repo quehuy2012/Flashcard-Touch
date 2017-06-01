@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwipeCellKit
 
 protocol DeckDetailAddEditViewControllerDelegate: class {
     func didEndEdit(deck:Deck)
@@ -19,28 +20,45 @@ class DeckDetailAddEditViewController: UIViewController {
     @IBOutlet weak var deckTitleTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     var cardt:[Card] = []
+    var isEditDeck = true
     
-    var deck:Deck!
+    var deck:Deck = Deck()
     
-    weak var delegate:DeckDetailAddEditViewControllerDelegate?
+    weak var delegate: DeckDetailAddEditViewControllerDelegate?
+    
+    var firstResponderCell: DeckDetailAddEditTableViewCell?
+    var firstResponderTextField: UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print(deck)
         
+        if deck.identifier == "" {
+            let id = "\(decks.count + 1)"
+           self.deck.cards.append(Card(term: "", definition: "", termImage: nil, definitionImage: nil, deckID: id))
+        }
+        
         hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.keyboardDismissMode = .interactive
         
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = 300
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 250, 0)
         
         deckTitleTextField.text = deck.name
         accessoryTermCountItem.title =
-        "\(deck.cards.count) term"
+        "\(deck.cards.count) terms"
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,9 +79,23 @@ class DeckDetailAddEditViewController: UIViewController {
     }
     
     @IBAction func acceptEditButton(_ sender: Any) {
-        
-        deck.identifier = deckTitleTextField.text ?? ""
-        self.delegate?.didEndEdit(deck: deck)
+        if isEditDeck {
+            deck.identifier = deckTitleTextField.text ?? ""
+            self.delegate?.didEndEdit(deck: deck)
+            _ = navigationController?.popViewController(animated: true)
+        }
+        else {
+            let id = "\(decks.count + 1)"
+            deck.folderID = "1"
+            deck.identifier = id
+            deck.name = deckTitleTextField.text ?? ""
+            let viewController = DeckDetailViewController.instantiateFrom(appStoryboard: .DeckDetail)
+            viewController.deck = deck
+            viewController.isInsert = false
+            viewController.idDeck = id
+            
+            present(viewController, animated: true, completion: nil)
+        }
     }
 
     @IBAction func addCardButtonTapped(_ sender: AnyObject) {
@@ -75,6 +107,37 @@ class DeckDetailAddEditViewController: UIViewController {
         
         deck.cards.append(Card())
         tableView.reloadData()
+        
+        let indexPath = IndexPath(row: deck.cards.count - 1, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+        accessoryTermCountItem.title =
+        "\(deck.cards.count) terms"
+        
+        let cell = tableView.cellForRow(at: indexPath) as! DeckDetailAddEditTableViewCell
+        cell.termTextField.becomeFirstResponder()
+    }
+    
+    
+    @IBAction func moveToNextFristResponse(_ sender: Any) {
+        if (firstResponderTextField == firstResponderCell?.termTextField) {
+            firstResponderCell?.giaiNghiaTextField.becomeFirstResponder()
+        }
+        else {
+            if let currentCell = firstResponderCell,
+                let index = tableView.indexPath(for: currentCell)?.row {
+                if index == deck.cards.count - 1 {
+                    // the firstResponder is last cell, so add new cell
+                }
+                else {
+                    let nextIndexPath = IndexPath(row: index + 1, section: 0)
+                    let nextCell = tableView.cellForRow(at: nextIndexPath) as! DeckDetailAddEditTableViewCell
+                    nextCell.termTextField.becomeFirstResponder()
+                    
+                    let offset = tableView.contentOffset
+                    tableView.contentOffset = CGPoint(x: offset.x, y: offset.y + 100)
+                }
+            }
+        }
     }
     /*
     // MARK: - Navigation
@@ -86,6 +149,26 @@ class DeckDetailAddEditViewController: UIViewController {
     }
     */
 
+    // MARK: Notification
+    func keyboardWillShow(notification: NSNotification) {
+        if !deckTitleTextField.isFirstResponder {
+//            if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//                if self.view.frame.origin.y == 0{
+//                    self.view.frame.origin.y -= keyboardSize.height
+//                }
+//            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if !deckTitleTextField.isFirstResponder {
+//            if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//                if self.view.frame.origin.y != 0{
+//                    self.view.frame.origin.y += keyboardSize.height
+//                }
+//            }
+        }
+    }
 }
 
 extension DeckDetailAddEditViewController : UITableViewDelegate, UITableViewDataSource, DeckDetailAddEditTableViewCellDelegate {
@@ -107,13 +190,10 @@ extension DeckDetailAddEditViewController : UITableViewDelegate, UITableViewData
         cell.giaiNghiaTextField.text = "\(gramma.definition)"
         
         cell.editingAccessoryType = .disclosureIndicator
+        cell.editDelegate = self
         cell.delegate = self
         cell.termTextField.inputAccessoryView = keyboardAccessoryView
         cell.giaiNghiaTextField.inputAccessoryView = keyboardAccessoryView
-        
-//        cell.layer.borderWidth = 1
-//        cell.layer.cornerRadius = 5
-//        cell.layer.borderColor = UIColor.black.cgColor
         
         return cell
     }
@@ -126,4 +206,47 @@ extension DeckDetailAddEditViewController : UITableViewDelegate, UITableViewData
         deck.cards[indexPath.row].term = term
         deck.cards[indexPath.row].definition = definition
     }
+    
+    func cell(_ cell: DeckDetailAddEditTableViewCell, textFieldDidBecomeFirstResponder textFrield: UITextField) {
+        firstResponderCell = cell
+        firstResponderTextField = textFrield
+    }
 }
+
+extension DeckDetailAddEditViewController: SwipeTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        //let card = deck.cards[indexPath.row]
+        
+        if orientation == .left {
+            // Làm edit
+            return nil
+        }
+        else {
+            let deleteAction = SwipeAction(style: .destructive, title: nil, handler: { (action, indexPath) in
+                self.deck.cards.remove(at: indexPath.row)
+                self.delegate?.didEndEdit(deck: self.deck)
+            })
+            
+            deleteAction.hidesWhenSelected = true
+            deleteAction.title = "Delete"
+            deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.2655673325, blue: 0.3893191218, alpha: 1)
+            return [deleteAction]
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeTableOptions {
+        var options = SwipeTableOptions()
+        options.expansionStyle = .destructive
+        options.transitionStyle = .border
+        options.buttonSpacing = 10
+        
+        return options
+    }
+    
+    func configure(action: SwipeAction, with descriptor: ActionDescriptor) {
+        action.title = descriptor.title()
+        action.image = descriptor.image()
+        action.backgroundColor = descriptor.color
+    }
+}
+

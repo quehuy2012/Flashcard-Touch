@@ -41,7 +41,7 @@ let cards: [Card] = [
 //create deck
 let decks : [Deck] = [
     Deck(identifier: "1", name: "bí kíp", cards: cards1, lastActivity: nil, folderID: "1"),
-    Deck(identifier: "2", name: "từ vựng nấu ăn", cards: cards2, lastActivity: nil, folderID: "1")
+    Deck(identifier: "2", name: "từ vựng nấu ăn", cards: cards, lastActivity: nil, folderID: "1")
 ]
 
 //create Folder

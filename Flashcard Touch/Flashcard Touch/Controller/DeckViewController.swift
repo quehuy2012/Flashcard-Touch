@@ -24,6 +24,10 @@ class DeckViewController: UIViewController {
         tracker.send(event.build() as [NSObject : AnyObject])
         // [END custom_event_swift]
         
+        let viewController = DeckDetailAddEditViewController.instantiateFrom(appStoryboard: .DeckDetail)
+        viewController.isEditDeck = false
+        navigationController?.pushViewController(viewController, animated: true)
+        
     }
     
     
@@ -107,6 +111,8 @@ extension DeckViewController:UITableViewDataSource, UITableViewDelegate{
             let today = Date()
 //            cell.lastActivity.text = convertDateToString(today)
         }
+        
+        cell.numberReview.text = "\(deck.cards.count)"
 //        cell.count.text = "\(countCardInDeck(id: deck.identifier))"
         
 //        cell.layer.borderWidth = 1
