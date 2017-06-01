@@ -181,7 +181,7 @@ extension Game1ViewController: UICollectionViewDelegate, UICollectionViewDataSou
             print(chooseFrist)
             let cell1 = collectionView.cellForItem(at: indexPath)
             UIView.animate(withDuration: 0.5, animations: {
-                cell1?.backgroundColor = UIColor.green
+                cell1?.backgroundColor = #colorLiteral(red: 0.308493197, green: 0.8693512082, blue: 0.4431946576, alpha: 1)
             }, completion: nil)
         }
         else {
@@ -190,7 +190,7 @@ extension Game1ViewController: UICollectionViewDelegate, UICollectionViewDataSou
             let cell = collectionView.cellForItem(at: indexPath)!
             
             UIView.animate(withDuration: 0.2, delay: 0,options: UIViewAnimationOptions.curveEaseIn, animations: {
-                cell.backgroundColor = UIColor.green
+                cell.backgroundColor = #colorLiteral(red: 0.308493197, green: 0.8693512082, blue: 0.4431946576, alpha: 1)
             }, completion: { (finished) in
                 
                 UIView.animate(withDuration: 0.2, animations: {

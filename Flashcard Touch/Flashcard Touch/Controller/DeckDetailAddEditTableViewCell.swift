@@ -18,14 +18,19 @@ class DeckDetailAddEditTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var termTextField: UITextField!
     @IBOutlet weak var giaiNghiaTextField: UITextField!
+    @IBOutlet weak var borderView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         termTextField.delegate = self
         giaiNghiaTextField.delegate = self
         
+        borderView.layer.cornerRadius = 5.0
+        borderView.layer.borderWidth = 1
+        borderView.layer.borderColor = UIColor.darkGray.cgColor
+        
         let f = contentView.frame
-        let fr = UIEdgeInsetsInsetRect(f, UIEdgeInsetsMake(10, 10, 10, 10))
+        let fr = UIEdgeInsetsInsetRect(f, UIEdgeInsetsMake(10, 10, 0, 10))
         contentView.frame = fr
     }
 

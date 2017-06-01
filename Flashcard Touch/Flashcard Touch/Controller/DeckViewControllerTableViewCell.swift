@@ -11,15 +11,11 @@ import UIKit
 class DeckViewControllerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameDeck: UILabel!
-    @IBOutlet weak var lastActivity: UILabel!
     @IBOutlet weak var numberReview: UILabel!
-    @IBOutlet weak var count: UILabel!
-    @IBOutlet weak var viewScreen: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        viewScreen.layer.cornerRadius = 15
     }
     
     override func layoutSubviews() {

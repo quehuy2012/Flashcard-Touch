@@ -91,8 +91,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/GoogleToolboxForMac/GoogleToolboxForMac.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Kingfisher/Kingfisher.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Koloda/Koloda.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Material/Material.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PagingMenuController/PagingMenuController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SCLAlertView/SCLAlertView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwipeCellKit/SwipeCellKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/pop/pop.framework"
 fi
@@ -104,8 +106,10 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/GoogleToolboxForMac/GoogleToolboxForMac.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Kingfisher/Kingfisher.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Koloda/Koloda.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Material/Material.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PagingMenuController/PagingMenuController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SCLAlertView/SCLAlertView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwipeCellKit/SwipeCellKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/pop/pop.framework"
 fi

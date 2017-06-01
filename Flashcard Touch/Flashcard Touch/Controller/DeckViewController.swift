@@ -32,6 +32,7 @@ class DeckViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.141602397, green: 0.8048137426, blue: 1, alpha: 1)
@@ -101,12 +102,12 @@ extension DeckViewController:UITableViewDataSource, UITableViewDelegate{
         
         cell.nameDeck.text = deck.name
         if deck.lastActivity != nil {
-            cell.lastActivity.text = convertDateToString(deck.lastActivity!)
+//            cell.userActivity.text = convertDateToString(deck.lastActivity!)
         } else{
             let today = Date()
-            cell.lastActivity.text = convertDateToString(today)
+//            cell.lastActivity.text = convertDateToString(today)
         }
-        cell.count.text = "\(countCardInDeck(id: deck.identifier))"
+//        cell.count.text = "\(countCardInDeck(id: deck.identifier))"
         
 //        cell.layer.borderWidth = 1
 //        cell.layer.cornerRadius = 5

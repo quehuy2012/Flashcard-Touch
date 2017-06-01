@@ -35,6 +35,9 @@ class DeckDetailAddEditViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 300
+        
         deckTitleTextField.text = deck.name
         accessoryTermCountItem.title =
         "\(deck.cards.count) term"
@@ -108,9 +111,9 @@ extension DeckDetailAddEditViewController : UITableViewDelegate, UITableViewData
         cell.termTextField.inputAccessoryView = keyboardAccessoryView
         cell.giaiNghiaTextField.inputAccessoryView = keyboardAccessoryView
         
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 5
-        cell.layer.borderColor = UIColor.black.cgColor
+//        cell.layer.borderWidth = 1
+//        cell.layer.cornerRadius = 5
+//        cell.layer.borderColor = UIColor.black.cgColor
         
         return cell
     }

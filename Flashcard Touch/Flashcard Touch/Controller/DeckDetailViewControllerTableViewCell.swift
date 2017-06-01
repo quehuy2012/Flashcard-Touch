@@ -27,7 +27,7 @@ class DeckDetailViewControllerTableViewCell: SwipeTableViewCell {
         
         if (animated) {
             UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseIn], animations: {
-                self.markImageView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                self.markImageView.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
             }, completion: { (finsihed) in
                 UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseOut], animations: { 
                     self.markImageView.transform = CGAffineTransform.identity
@@ -40,14 +40,15 @@ class DeckDetailViewControllerTableViewCell: SwipeTableViewCell {
         super.awakeFromNib()
         // Initialization code
 //        viewScreen.layer.cornerRadius = 15
+//        let f = contentView.frame
+//        let fr = UIEdgeInsetsInsetRect(f, UIEdgeInsetsMake(10, 10, 10, 10))
+//        contentView.frame = fr
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let f = contentView.frame
-        let fr = UIEdgeInsetsInsetRect(f, UIEdgeInsetsMake(10, 10, 10, 10))
-        contentView.frame = fr
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

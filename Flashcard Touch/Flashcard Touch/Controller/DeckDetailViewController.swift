@@ -51,7 +51,7 @@ class DeckDetailViewController: UIViewController {
                 sum += 1
             }
         }
-        countTerm.text = "\(sum) Term"
+        countTerm.text = "\(sum) Terms"
         
         // Do any additional setup after loading the view.
         let decksName = decks.map{ $0.name }
@@ -75,6 +75,7 @@ class DeckDetailViewController: UIViewController {
         
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
             
+            self.selectedDeckIndex = indexPath
             // [START custom_event_swift]
             guard let tracker = GAI.sharedInstance().defaultTracker else { return }
             guard let event = GAIDictionaryBuilder.createEvent(withCategory: "Deck Detail", action: "Switch to other Deck", label: nil, value: nil) else { return }
@@ -157,7 +158,7 @@ class DeckDetailViewController: UIViewController {
     @IBAction func PlayStackGameButton(_ sender: UIButton) {
         // [START custom_event_swift]
         guard let tracker = GAI.sharedInstance().defaultTracker else { return }
-        guard let event = GAIDictionaryBuilder.createEvent(withCategory: "Deck Detail", action: "Switch to Learn Card (Game 1)", label: nil, value: nil) else { return }
+        guard let event = GAIDictionaryBuilder.createEvent(withCategory: "Deck Detail", action: "Switch to Learn Card (Stack Game)", label: nil, value: nil) else { return }
         tracker.send(event.build() as [NSObject : AnyObject])
         // [END custom_event_swift]
         
@@ -215,7 +216,7 @@ extension DeckDetailViewController: DeckDetailAddEditViewControllerDelegate {
 
 extension DeckDetailViewController: SwipeTableViewCellDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-        let card = cards[indexPath.row]
+        let card = localCard[indexPath.row]
         
         if orientation == .left {
             // Làm edit
@@ -223,11 +224,13 @@ extension DeckDetailViewController: SwipeTableViewCellDelegate {
         }
         else {
             let markAction = SwipeAction(style: .default, title: nil, handler: { (action, indexPath) in
-                let card = cards[indexPath.row]
+                let card = self.localCard[indexPath.row]
                 card.marked = !card.marked
                 
                 let cell = tableView.cellForRow(at: indexPath) as! DeckDetailViewControllerTableViewCell
                 cell.setMark(card.marked, animated: true)
+                
+                decks[self.selectedDeckIndex].cards = self.localCard
             })
             
             markAction.hidesWhenSelected = true
