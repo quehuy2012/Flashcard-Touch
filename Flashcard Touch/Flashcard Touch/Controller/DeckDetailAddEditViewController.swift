@@ -89,12 +89,13 @@ class DeckDetailAddEditViewController: UIViewController {
             deck.folderID = "1"
             deck.identifier = id
             deck.name = deckTitleTextField.text ?? ""
+            decks.append(deck)
             let viewController = DeckDetailViewController.instantiateFrom(appStoryboard: .DeckDetail)
             viewController.deck = deck
             viewController.isInsert = false
             viewController.idDeck = id
             
-            present(viewController, animated: true, completion: nil)
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
 

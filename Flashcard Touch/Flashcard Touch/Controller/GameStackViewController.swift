@@ -87,10 +87,10 @@ extension GameStackViewController: KolodaViewDelegate {
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         switch direction {
-        case .left:
+        case .right:
             currentCards.remove(at: index)
             koloda.removeCardInIndexRange(index ..< index+1, animated: true)
-        case .right:
+        case .left:
             break
         default:
             break

@@ -8,6 +8,7 @@
 
 import UIKit
 import GameKit
+import SCLAlertView
 
 class Game1ViewController: UIViewController {
     
@@ -34,6 +35,8 @@ class Game1ViewController: UIViewController {
     
     //bộ deck tạm
     var deckTemp:Deck!
+    
+    var demTempForStop = 0
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -212,6 +215,26 @@ extension Game1ViewController: UICollectionViewDelegate, UICollectionViewDataSou
                         cell.alpha = 0;
                     }, completion: nil)
                     self.chooseFrist = -1
+                    demTempForStop += 1
+                    
+                    if demTempForStop >= shuffedCardIndex.count {
+                        let appearance = SCLAlertView.SCLAppearance(showCloseButton: false)
+                        let alert = SCLAlertView(appearance: appearance)
+                        
+                        _ = alert.addButton("Try again") {
+                            for i in 0 ..< self.cardTermAndDefination.count {
+                                let cell = collectionView.cellForItem(at: IndexPath(item: i, section: 0))
+                                cell?.alpha = 1
+                                self.demTempForStop = 0
+                            }
+                        }
+                        
+                        _ = alert.addButton("Close", action: {
+                            self.navigationController?.popViewController(animated: true)
+                        })
+                        _ = alert.showSuccess("Finished", subTitle: "")
+                    }
+                    
                     return
                 }
             }

@@ -133,7 +133,10 @@
                                                     <rect key="frame" x="144" y="0.0" width="176" height="99"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Defination" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLU-s9-WZl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="99"/>
+                                                            <rect key="frame" x="8" y="8" width="132" height="83"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="yxI-AE-IX6"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -147,13 +150,13 @@
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="PLU-s9-WZl" secondAttribute="bottom" id="0gT-SE-4ix"/>
+                                                        <constraint firstAttribute="bottom" secondItem="PLU-s9-WZl" secondAttribute="bottom" constant="8" id="0gT-SE-4ix"/>
                                                         <constraint firstItem="3eW-mz-hg4" firstAttribute="centerY" secondItem="8C7-cE-UmI" secondAttribute="centerY" id="5hb-5h-abE"/>
                                                         <constraint firstItem="3eW-mz-hg4" firstAttribute="leading" secondItem="PLU-s9-WZl" secondAttribute="trailing" constant="8" id="6gu-4G-X1m"/>
-                                                        <constraint firstItem="PLU-s9-WZl" firstAttribute="top" secondItem="8C7-cE-UmI" secondAttribute="top" id="IBQ-bd-u5a"/>
+                                                        <constraint firstItem="PLU-s9-WZl" firstAttribute="top" secondItem="8C7-cE-UmI" secondAttribute="top" constant="8" id="IBQ-bd-u5a"/>
                                                         <constraint firstAttribute="width" constant="176" id="RxZ-fW-Iim"/>
                                                         <constraint firstAttribute="trailing" secondItem="3eW-mz-hg4" secondAttribute="trailing" constant="8" id="l5U-GG-tiQ"/>
-                                                        <constraint firstItem="PLU-s9-WZl" firstAttribute="leading" secondItem="8C7-cE-UmI" secondAttribute="leading" id="sff-DS-DzB"/>
+                                                        <constraint firstItem="PLU-s9-WZl" firstAttribute="leading" secondItem="8C7-cE-UmI" secondAttribute="leading" constant="8" id="sff-DS-DzB"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>

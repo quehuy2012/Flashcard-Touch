@@ -43,6 +43,7 @@ class DeckDetailViewControllerTableViewCell: SwipeTableViewCell {
 //        let f = contentView.frame
 //        let fr = UIEdgeInsetsInsetRect(f, UIEdgeInsetsMake(10, 10, 10, 10))
 //        contentView.frame = fr
+        definition.sizeToFit()
     }
     
     override func layoutSubviews() {
