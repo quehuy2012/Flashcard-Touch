@@ -9,6 +9,5 @@
 #ifndef Flashcard_Touch_Bridging_Header_h
 #define Flashcard_Touch_Bridging_Header_h
 
-#import <Google/Analytics.h>
 
 #endif /* Flashcard_Touch_Bridging_Header_h */

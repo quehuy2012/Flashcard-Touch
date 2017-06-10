@@ -8,11 +8,10 @@ pod 'SCLAlertView'
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'GoogleSignIn'
-pod 'Google/Analytics'
 pod 'DatePickerDialog'
 pod 'Kingfisher', '~> 3.0'
 pod 'BTNavigationDropdownMenu', :git => 'https://github.com/PhamBaTho/BTNavigationDropdownMenu.git', :branch => 'swift-3.0'
-pod "PagingMenuController"
+pod ‘PagingMenuController’
 pod 'Koloda'
 pod 'SwipeCellKit'
 pod 'Material', '~> 2.0'

@@ -18,20 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        FirebaseApp.configure()
-//        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        FirebaseApp.configure()
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         
-        // Google Analystic
-        guard let gai = GAI.sharedInstance() else {
-            assert(false, "Google Analytics not configured correctly")
-        }
-        gai.tracker(withTrackingId: "UA-100062579-1")
-        // Optional: automatically report uncaught exceptions.
-        gai.trackUncaughtExceptions = true
-        
-        // Optional: set Logger to VERBOSE for debug information.
-        // Remove before app release.
-        gai.logger.logLevel = .verbose;
+//        // Google Analystic
+//        guard let gai = GAI.sharedInstance() else {
+//            assert(false, "Google Analytics not configured correctly")
+//        }
+//        gai.tracker(withTrackingId: "UA-100062579-1")
+//        // Optional: automatically report uncaught exceptions.
+//        gai.trackUncaughtExceptions = true
+//        
+//        // Optional: set Logger to VERBOSE for debug information.
+//        // Remove before app release.
+//        gai.logger.logLevel = .verbose;
         
         return true
     }

@@ -64,13 +64,13 @@ class DeckDetailAddEditViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        // [START screen_view_hit_swift]
-        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
-        tracker.set(kGAIScreenName, value: "Deck Detail Add Edit View Controller")
-        
-        guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
-        tracker.send(builder.build() as [NSObject : AnyObject])
-        // [END screen_view_hit_swift]
+//        // [START screen_view_hit_swift]
+//        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+//        tracker.set(kGAIScreenName, value: "Deck Detail Add Edit View Controller")
+//        
+//        guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
+//        tracker.send(builder.build() as [NSObject : AnyObject])
+//        // [END screen_view_hit_swift]
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,11 +100,11 @@ class DeckDetailAddEditViewController: UIViewController {
     }
 
     @IBAction func addCardButtonTapped(_ sender: AnyObject) {
-        // [START custom_event_swift]
-        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
-        guard let event = GAIDictionaryBuilder.createEvent(withCategory: "Deck Edit", action: "Add a new Card", label: nil, value: nil) else { return }
-        tracker.send(event.build() as [NSObject : AnyObject])
-        // [END custom_event_swift]
+//        // [START custom_event_swift]
+//        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+//        guard let event = GAIDictionaryBuilder.createEvent(withCategory: "Deck Edit", action: "Add a new Card", label: nil, value: nil) else { return }
+//        tracker.send(event.build() as [NSObject : AnyObject])
+//        // [END custom_event_swift]
         
         deck.cards.append(Card())
         tableView.reloadData()

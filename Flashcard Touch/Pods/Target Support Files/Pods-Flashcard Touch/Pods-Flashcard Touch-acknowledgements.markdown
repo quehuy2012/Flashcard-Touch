@@ -481,14 +481,6 @@ Copyright 2017 Google
    limitations under the License.
 
 
-## Google
-
-Copyright 2016 Google Inc.
-
-## GoogleAnalytics
-
-Copyright 2016 Google
-
 ## GoogleSignIn
 
 Copyright 2017 Google
