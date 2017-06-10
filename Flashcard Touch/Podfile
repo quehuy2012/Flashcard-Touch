@@ -7,7 +7,6 @@ target “Flashcard Touch” do
 pod 'SCLAlertView'
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
-pod ‘Google/Analytics'
 pod 'GoogleSignIn'
 pod 'DatePickerDialog'
 pod 'Kingfisher', '~> 3.0'
