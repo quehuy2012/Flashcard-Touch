@@ -47,7 +47,7 @@ class Game1ViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        localCardTemp = localCard
+        localCardTemp = deck.cards
 
         
         
