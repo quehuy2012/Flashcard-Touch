@@ -19,9 +19,7 @@ class DeckDetailViewController: UIViewController {
     var menuView : BTNavigationDropdownMenu!
     
     //MARK: Local variable
-    var idDeck:String = ""
     var isInsert = false
-    var localCard : [Card] = []
     var deck:Deck!
     var selectedDeckIndex = 0
     
@@ -42,14 +40,7 @@ class DeckDetailViewController: UIViewController {
             }
         }
         
-        var sum = 0
-        for card in cards{
-            if card.deckID == idDeck{
-                localCard.append(card)
-                sum += 1
-            }
-        }
-        countTerm.text = "\(sum) Terms"
+        countTerm.text = "\(deck.cards.count) Terms"
         
         // Do any additional setup after loading the view.
         let decksName = decks.map{ $0.name }
@@ -84,15 +75,14 @@ class DeckDetailViewController: UIViewController {
             
             let temp = decks[indexPath]
             print(temp)
-            
-            self.localCard = temp.cards
+            self.deck = decks[indexPath]
             
             print("-------")
             //print(self.cardt.count)
             
             //            print(decks)
 
-            self.countTerm.text = "\(self.localCard.count)"
+            self.countTerm.text = "\(self.deck.cards.count)"
             self.tableView.reloadData()
             
             self.selectedDeckIndex = indexPath
@@ -131,7 +121,7 @@ class DeckDetailViewController: UIViewController {
         
         print("Edit tapped")
         let viewController = DeckDetailAddEditViewController.instantiateFrom(appStoryboard: .DeckDetail)
-        viewController.cardt = localCard
+        viewController.cardt = deck.cards
         viewController.deck = decks[selectedDeckIndex]
         viewController.delegate = self
         
@@ -139,27 +129,13 @@ class DeckDetailViewController: UIViewController {
     }
     
     @IBAction func PlayGame1Button(_ sender: Any) {
-//        // [START custom_event_swift]
-//        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
-//        guard let event = GAIDictionaryBuilder.createEvent(withCategory: "Deck Detail", action: "Switch to Learn Card (Game 1)", label: nil, value: nil) else { return }
-//        tracker.send(event.build() as [NSObject : AnyObject])
-//        // [END custom_event_swift]
-        
         print("playgame")
         let viewController = Game1ViewController.instantiateFrom(appStoryboard: .ScreenGame1)
-        viewController.deck = decks[selectedDeckIndex]
-        //truyền mảng local card đang sét của bộ deckID nào đó 
-        viewController.localCard = localCard
+        viewController.deck = deck
         navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction func PlayStackGameButton(_ sender: UIButton) {
-//        // [START custom_event_swift]
-//        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
-//        guard let event = GAIDictionaryBuilder.createEvent(withCategory: "Deck Detail", action: "Switch to Learn Card (Stack Game)", label: nil, value: nil) else { return }
-//        tracker.send(event.build() as [NSObject : AnyObject])
-//        // [END custom_event_swift]
-        
         let viewController = GameStackViewController.instantiateFrom(appStoryboard: .GameStack)
         viewController.originalCards = deck.cards
         
@@ -185,11 +161,11 @@ extension DeckDetailViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return localCard.count
+        return deck.cards.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let card = localCard[indexPath.row]
+        let card = deck.cards[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "DeckDetailViewControllerTableViewCell", for: indexPath) as! DeckDetailViewControllerTableViewCell
         cell.delegate = self
         
@@ -213,7 +189,8 @@ extension DeckDetailViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension DeckDetailViewController: DeckDetailAddEditViewControllerDelegate {
     func didEndEdit(deck: Deck) {
-        localCard = deck.cards
+        self.deck = deck
+        decks[selectedDeckIndex] = deck
         tableView.reloadData()
         
         //navigationController?.popViewController(animated: true)
@@ -222,7 +199,7 @@ extension DeckDetailViewController: DeckDetailAddEditViewControllerDelegate {
 
 extension DeckDetailViewController: SwipeTableViewCellDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-        let card = localCard[indexPath.row]
+        let card = deck.cards[indexPath.row]
         
         if orientation == .left {
             // Làm edit
@@ -230,13 +207,12 @@ extension DeckDetailViewController: SwipeTableViewCellDelegate {
         }
         else {
             let markAction = SwipeAction(style: .default, title: nil, handler: { (action, indexPath) in
-                let card = self.localCard[indexPath.row]
+                let card = self.deck.cards[indexPath.row]
                 card.marked = !card.marked
                 
                 let cell = tableView.cellForRow(at: indexPath) as! DeckDetailViewControllerTableViewCell
                 cell.setMark(card.marked, animated: true)
                 
-                decks[self.selectedDeckIndex].cards = self.localCard
             })
             
             markAction.hidesWhenSelected = true

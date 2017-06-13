@@ -45,13 +45,7 @@ class DeckViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-//        // [START screen_view_hit_swift]
-//        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
-//        tracker.set(kGAIScreenName, value: "Deck View Controller")
-//        
-//        guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
-//        tracker.send(builder.build() as [NSObject : AnyObject])
-//        // [END screen_view_hit_swift]
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -132,10 +126,9 @@ extension DeckViewController:UITableViewDataSource, UITableViewDelegate{
         
         let sb = UIStoryboard(name: "DeckDetail", bundle: nil)
         let detail = sb.instantiateViewController(withIdentifier: "DeckDetailViewController") as! DeckDetailViewController
-        detail.idDeck = decks[indexPath.row].identifier
         detail.isInsert = false
         detail.deck = decks[indexPath.row]
-        navigationController?.pushViewController(detail, animated: true)
+        _ = navigationController?.pushViewController(detail, animated: true)
 
     }
 }

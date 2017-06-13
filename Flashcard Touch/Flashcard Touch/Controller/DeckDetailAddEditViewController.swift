@@ -80,9 +80,9 @@ class DeckDetailAddEditViewController: UIViewController {
     
     @IBAction func acceptEditButton(_ sender: Any) {
         if isEditDeck {
-            deck.identifier = deckTitleTextField.text ?? ""
+            deck.name = deckTitleTextField.text ?? ""
             self.delegate?.didEndEdit(deck: deck)
-            _ = navigationController?.popViewController(animated: true)
+            
         }
         else {
             let id = "\(decks.count + 1)"
@@ -90,22 +90,11 @@ class DeckDetailAddEditViewController: UIViewController {
             deck.identifier = id
             deck.name = deckTitleTextField.text ?? ""
             decks.append(deck)
-            let viewController = DeckDetailViewController.instantiateFrom(appStoryboard: .DeckDetail)
-            viewController.deck = deck
-            viewController.isInsert = false
-            viewController.idDeck = id
-            
-            navigationController?.pushViewController(viewController, animated: true)
         }
+        _ = navigationController?.popViewController(animated: true)
     }
 
     @IBAction func addCardButtonTapped(_ sender: AnyObject) {
-//        // [START custom_event_swift]
-//        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
-//        guard let event = GAIDictionaryBuilder.createEvent(withCategory: "Deck Edit", action: "Add a new Card", label: nil, value: nil) else { return }
-//        tracker.send(event.build() as [NSObject : AnyObject])
-//        // [END custom_event_swift]
-        
         deck.cards.append(Card())
         tableView.reloadData()
         
