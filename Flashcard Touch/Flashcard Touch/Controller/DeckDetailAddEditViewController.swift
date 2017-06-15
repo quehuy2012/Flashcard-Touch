@@ -15,6 +15,7 @@ protocol DeckDetailAddEditViewControllerDelegate: class {
 
 class DeckDetailAddEditViewController: UIViewController {
     
+    @IBOutlet weak var imagePickerButton: UIBarButtonItem!
     @IBOutlet weak var accessoryTermCountItem: UIBarButtonItem!
     @IBOutlet var keyboardAccessoryView: UIToolbar!
     @IBOutlet weak var deckTitleTextField: UITextField!
@@ -76,6 +77,16 @@ class DeckDetailAddEditViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func imagePickerButtonTapped(_ sender: Any) {
+        let alertVC = UIAlertController(title: "Choose image", message: "Choose image for definitation", preferredStyle: .actionSheet)
+        
+        alertVC.addAction(UIAlertAction(title: "From Photo Library", style: .default, handler: { (action) in
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = .camera
+//            imagePicker.delegate = self
+        })
     }
     
     @IBAction func acceptEditButton(_ sender: Any) {
@@ -200,6 +211,8 @@ extension DeckDetailAddEditViewController : UITableViewDelegate, UITableViewData
     func cell(_ cell: DeckDetailAddEditTableViewCell, textFieldDidBecomeFirstResponder textFrield: UITextField) {
         firstResponderCell = cell
         firstResponderTextField = textFrield
+        imagePickerButton.isEnabled = cell.giaiNghiaTextField == textFrield ? true : false
+
     }
 }
 

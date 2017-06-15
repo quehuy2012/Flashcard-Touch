@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -415,6 +415,7 @@
                     <connections>
                         <outlet property="accessoryTermCountItem" destination="lGk-bw-RRp" id="FvQ-HF-kYP"/>
                         <outlet property="deckTitleTextField" destination="v6B-75-5LC" id="JGr-iy-73t"/>
+                        <outlet property="imagePickerButton" destination="Ma5-Dw-Edm" id="l0y-OY-hwx"/>
                         <outlet property="keyboardAccessoryView" destination="4j9-oE-EQS" id="0oc-Ff-l9Q"/>
                         <outlet property="tableView" destination="uqg-yB-rh0" id="lI8-9k-p0J"/>
                     </connections>
@@ -432,7 +433,11 @@
                         <barButtonItem systemItem="flexibleSpace" id="3Qp-6H-FTI"/>
                         <barButtonItem enabled="NO" title="10" id="lGk-bw-RRp"/>
                         <barButtonItem systemItem="flexibleSpace" id="ufd-fu-drY"/>
-                        <barButtonItem systemItem="camera" id="Ma5-Dw-Edm"/>
+                        <barButtonItem systemItem="camera" id="Ma5-Dw-Edm">
+                            <connections>
+                                <action selector="imagePickerButtonTapped:" destination="3Pa-uk-QHV" id="8i1-Hz-iPG"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem systemItem="add" id="aAS-RT-uuQ">
                             <connections>
                                 <action selector="addCardButtonTapped:" destination="3Pa-uk-QHV" id="d9B-Iw-30l"/>
