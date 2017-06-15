@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Y1-2l-gWH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tka-0f-Qcn">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,13 +22,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfN-m0-zVP">
-                                <rect key="frame" x="130" y="40" width="61.5" height="30"/>
+                                <rect key="frame" x="130" y="84" width="61.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWy-UQ-GaI">
-                                <rect key="frame" x="50" y="160" width="70" height="30"/>
+                                <rect key="frame" x="50" y="204" width="70" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="fA9-kN-ak8"/>
                                     <constraint firstAttribute="width" constant="70" id="wHG-Tr-MGq"/>
@@ -35,7 +36,7 @@
                                 <state key="normal" title="Facebook"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04f-fK-QTJ">
-                                <rect key="frame" x="230" y="160" width="50" height="30"/>
+                                <rect key="frame" x="230" y="204" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="bbb-xl-VQV"/>
                                     <constraint firstAttribute="width" constant="50" id="pLj-Uv-KPB"/>
@@ -56,10 +57,30 @@
                             <constraint firstItem="IWy-UQ-GaI" firstAttribute="top" secondItem="aay-k4-kDp" secondAttribute="bottom" constant="140" id="t36-31-1N0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="dlA-U4-F71"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Nq-rP-w2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="-8"/>
+            <point key="canvasLocation" x="1102.5" y="-8.4507042253521121"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hav-fu-Ccs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tka-0f-Qcn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JM8-UP-BVh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.3294117647" green="0.78039215689999997" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2Y1-2l-gWH" kind="relationship" relationship="rootViewController" id="nbA-tl-Pms"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nGC-VW-N12" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="105" y="-8.4507042253521121"/>
         </scene>
     </scenes>
 </document>

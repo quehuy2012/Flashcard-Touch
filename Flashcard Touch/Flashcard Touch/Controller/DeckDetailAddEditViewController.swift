@@ -8,12 +8,16 @@
 
 import UIKit
 import SwipeCellKit
+import Firebase
+import FirebaseDatabase
 
 protocol DeckDetailAddEditViewControllerDelegate: class {
     func didEndEdit(deck:Deck)
 }
 
 class DeckDetailAddEditViewController: UIViewController {
+    
+    var ref: DatabaseReference!
     
     @IBOutlet weak var imagePickerButton: UIBarButtonItem!
     @IBOutlet weak var accessoryTermCountItem: UIBarButtonItem!
@@ -22,8 +26,11 @@ class DeckDetailAddEditViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var cardt:[Card] = []
     var isEditDeck = true
-    
+    var UID = ""
     var deck:Deck = Deck()
+    
+    var nameDeckOld = ""
+    var dateconvert = ""
     
     weak var delegate: DeckDetailAddEditViewControllerDelegate?
     
@@ -46,6 +53,8 @@ class DeckDetailAddEditViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.keyboardDismissMode = .interactive
+        
+        nameDeckOld = deck.name
         
         self.automaticallyAdjustsScrollViewInsets = false
         self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 250, 0)
@@ -86,25 +95,61 @@ class DeckDetailAddEditViewController: UIViewController {
             let imagePicker = UIImagePickerController()
             imagePicker.sourceType = .camera
 //            imagePicker.delegate = self
-        })
+        }))
+    }
+    
+    //xoá nhánh trong firebase
+    func myDeleteFunction(childIWantToRemove: String) {
+        
+        ref.child(UID).child(childIWantToRemove).removeValue { (error, ref) in
+            if error != nil {
+                print("error \(error)")
+            }
+        }
     }
     
     @IBAction func acceptEditButton(_ sender: Any) {
+        
+        ref = Database.database().reference()
+        
+        let date = Date()
+        
+        dateconvert = convertDateToString(date)
+        
         if isEditDeck {
             deck.name = deckTitleTextField.text ?? ""
             self.delegate?.didEndEdit(deck: deck)
             
+            myDeleteFunction(childIWantToRemove: self.nameDeckOld)
+            for (indexEdit,legEdit) in deck.cards.enumerated() {
+                ref.child(UID).child(deckTitleTextField.text!).child("cards").child("card\(indexEdit)").setValue(["term":legEdit.term , "defination":legEdit.definition, "mark":legEdit.marked])
+            }
+            ref.child(UID).child(deckTitleTextField.text!).child("last activity").setValue(dateconvert)
         }
         else {
+            
+            
             let id = "\(decks.count + 1)"
             deck.folderID = "1"
             deck.identifier = id
             deck.name = deckTitleTextField.text ?? ""
             decks.append(deck)
+            //push data lên firebase
+            for (index,leg) in deck.cards.enumerated() {
+                ref.child(UID).child(deckTitleTextField.text!).child("cards").child("card\(index)").setValue(["term":leg.term , "defination":leg.definition, "mark":false])
+                
+            }
+            ref.child(UID).child(deckTitleTextField.text!).child("last activity").setValue(dateconvert)
         }
         _ = navigationController?.popViewController(animated: true)
     }
 
+    func convertDateToString(_ date:Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        return dateFormatter.string(from: date)
+    }
+    
     @IBAction func addCardButtonTapped(_ sender: AnyObject) {
         deck.cards.append(Card())
         tableView.reloadData()

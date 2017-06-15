@@ -7,9 +7,20 @@
 //
 
 import UIKit
+import SwipeCellKit
+import Firebase
+import FirebaseDatabase
 
 class DeckViewController: UIViewController {
     
+    var ref:DatabaseReference!
+    var mangDictCount:Int = 0
+    var decksFirebase = [String]()
+    //    var decks = [Deck]()
+    var lastActivity:String = ""
+    
+    var saveCards:[Card] = []
+    var UID = ""
     //MARK: UI Elements
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,8 +37,8 @@ class DeckViewController: UIViewController {
         
         let viewController = DeckDetailAddEditViewController.instantiateFrom(appStoryboard: .DeckDetail)
         viewController.isEditDeck = false
+        viewController.UID = UID
         navigationController?.pushViewController(viewController, animated: true)
-        
     }
     
     
@@ -40,6 +51,72 @@ class DeckViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.141602397, green: 0.8048137426, blue: 1, alpha: 1)
+        
+        decks = []
+        
+        parseDatabase()
+    }
+    
+    func parseDatabase() {
+        ref = Database.database().reference()
+        
+        //đọc dữ liệu từ uid (event Type : khi thay đổi, khi them, khi di chuyển hay toàn bộ,
+        self.ref.child(self.UID).observeSingleEvent(of:.value, with: { (snapshot) in
+            guard let dict = snapshot.value as? [String:Any] else {
+                return
+            }
+            //            print(snapshot)
+            print(dict)
+            print(dict.count)
+            
+            self.mangDictCount = dict.count
+            
+            for (index,leg) in dict{
+                //                print("\(index) and \(leg)")
+                self.decksFirebase.append("\(index) \(leg)")
+                
+                //tiếp tục parse
+                let responseDict = leg as! NSDictionary
+                let cards = responseDict["cards"] as? [String:Any]
+                self.lastActivity = (responseDict["last activity"] as? String)!
+                
+                //for trong cards
+                for (index,leg) in cards! {
+                    print("\(index) and \(leg)")
+                    let responseCards = leg as! NSDictionary
+                    
+                    self.saveCards.append(Card(term: (responseCards["term"] as? String)!, definition: (responseCards["defination"] as? String)!, marked: (responseCards["mark"] as? Bool)!))
+                    
+                }
+                
+                //                print(self.saveCards)
+                //                print(self.saveCards.count)
+                
+                
+                decks.append(Deck(name: index, cards: self.saveCards, lastActivity: self.GetDateFromString(DateStr: self.lastActivity)
+                ))
+                //xoá những giá trị đã được lưu vào Decks
+                self.saveCards.removeAll()
+            }
+            print(decks.count)
+            
+            self.tableView.reloadData()
+            
+        })
+    }
+    
+    //get string sang date
+    func GetDateFromString(DateStr: String)-> Date
+    {
+        let calendar = NSCalendar(identifier: NSCalendar.Identifier.gregorian)
+        let DateArray = DateStr.components(separatedBy: "/")
+        let components = NSDateComponents()
+        components.year = Int(DateArray[2])!
+        components.month = Int(DateArray[1])!
+        components.day = Int(DateArray[0])! + 1
+        let date = calendar?.date(from: components as DateComponents)
+        
+        return date!
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +168,7 @@ extension DeckViewController:UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let deck = decks[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "DeckViewControllerTableViewCell", for: indexPath) as! DeckViewControllerTableViewCell
-        
+        cell.delegate = self
 //        let nameDeck = cell.viewWithTag(5) as! UILabel
 //        let dateDeck = cell.viewWithTag(10) as! UILabel
 //        let countCard = cell.viewWithTag(20) as! UILabel
@@ -128,7 +205,60 @@ extension DeckViewController:UITableViewDataSource, UITableViewDelegate{
         let detail = sb.instantiateViewController(withIdentifier: "DeckDetailViewController") as! DeckDetailViewController
         detail.isInsert = false
         detail.deck = decks[indexPath.row]
+        detail.UID = UID
         _ = navigationController?.pushViewController(detail, animated: true)
 
+    }
+    
+    func myDeleteFunction(childIWantToRemove: String) {
+        
+        ref.child(UID).child(childIWantToRemove).removeValue { (error, ref) in
+            if error != nil {
+                print("error \(error)")
+            }
+        }
+    }
+}
+
+
+
+extension DeckViewController: SwipeTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        
+        if orientation == .left {
+            // Làm edit
+            return nil
+        }
+        else {
+            let removedDeck = decks[indexPath.row]
+            let deleteAction = SwipeAction(style: .destructive, title: "Delete", handler: { (action, indexPath) in
+                decks.remove(at: indexPath.row)
+                // Xóa firebase ở đây
+                self.myDeleteFunction(childIWantToRemove: removedDeck.name)
+                
+                tableView.reloadData()
+            })
+            
+            deleteAction.hidesWhenSelected = true
+            deleteAction.accessibilityLabel = "Delete"
+            deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.2655673325, blue: 0.3893191218, alpha: 1)
+            
+            return [deleteAction]
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeTableOptions {
+        var options = SwipeTableOptions()
+        options.expansionStyle = .selection
+        options.transitionStyle = .border
+        options.buttonSpacing = 11
+        
+        return options
+    }
+    
+    func configure(action: SwipeAction, with descriptor: ActionDescriptor) {
+        action.title = descriptor.title()
+        action.image = descriptor.image()
+        action.backgroundColor = descriptor.color
     }
 }

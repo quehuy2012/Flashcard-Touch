@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Myf-yh-wXA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Myf-yh-wXA">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,20 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufz-hY-9hX">
-                                <rect key="frame" x="32" y="80" width="272" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="4bS-x0-2Kw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOu-6f-6qC">
-                                <rect key="frame" x="0.0" y="479" width="320" height="40"/>
+                                <rect key="frame" x="0.0" y="459" width="320" height="60"/>
                                 <color key="backgroundColor" red="0.14160239699999999" green="0.80481374260000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="S5q-cc-Sbm"/>
+                                    <constraint firstAttribute="height" constant="60" id="S5q-cc-Sbm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Create a new deck">
@@ -45,7 +37,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HWI-lW-FQz">
-                                <rect key="frame" x="0.0" y="110" width="320" height="369"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="395"/>
                                 <color key="backgroundColor" red="0.93046178290000003" green="0.93373230380000005" blue="0.94354386649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.87450980389999999" green="0.87563550469999996" blue="0.87565046550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -97,15 +89,12 @@
                         <color key="backgroundColor" red="0.93046178286111292" green="0.93373230377464189" blue="0.94354386651522848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="BhC-Fo-eyP" firstAttribute="top" secondItem="HOu-6f-6qC" secondAttribute="bottom" id="0sU-Ua-Z7u"/>
-                            <constraint firstItem="Ufz-hY-9hX" firstAttribute="top" secondItem="DAr-QY-JKL" secondAttribute="bottom" constant="16" id="3me-Vz-IKD"/>
                             <constraint firstItem="HOu-6f-6qC" firstAttribute="top" secondItem="HWI-lW-FQz" secondAttribute="bottom" id="9R3-wP-a69"/>
-                            <constraint firstItem="HWI-lW-FQz" firstAttribute="top" secondItem="Ufz-hY-9hX" secondAttribute="bottom" id="BwU-1W-zVF"/>
                             <constraint firstAttribute="trailing" secondItem="HWI-lW-FQz" secondAttribute="trailing" id="OYd-dX-L14"/>
                             <constraint firstItem="HOu-6f-6qC" firstAttribute="leading" secondItem="tMT-63-IgU" secondAttribute="leading" id="T5V-4V-2hA"/>
-                            <constraint firstAttribute="trailing" secondItem="Ufz-hY-9hX" secondAttribute="trailing" constant="16" id="TGi-Mc-syl"/>
                             <constraint firstAttribute="trailing" secondItem="HOu-6f-6qC" secondAttribute="trailing" id="gbt-c4-LD6"/>
                             <constraint firstItem="HWI-lW-FQz" firstAttribute="leading" secondItem="tMT-63-IgU" secondAttribute="leading" id="ip9-cF-UDW"/>
-                            <constraint firstItem="Ufz-hY-9hX" firstAttribute="leading" secondItem="tMT-63-IgU" secondAttribute="leading" constant="32" id="wVW-PW-0Hc"/>
+                            <constraint firstItem="HWI-lW-FQz" firstAttribute="top" secondItem="DAr-QY-JKL" secondAttribute="bottom" id="y3P-ue-Q9r"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Deck" id="tjf-tD-sPt"/>

@@ -32,4 +32,7 @@ class Deck {
         self.folderID = folderID
     }
     
+    convenience init(name:String,cards:[Card],lastActivity:Date) {
+        self.init(identifier:UUID().uuidString,name:name,cards:cards,lastActivity:lastActivity,folderID:"1")
+    }
 }

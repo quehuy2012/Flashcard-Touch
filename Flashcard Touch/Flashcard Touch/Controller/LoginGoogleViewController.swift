@@ -8,9 +8,14 @@
 
 import UIKit
 import GoogleSignIn
+import Firebase
+import FirebaseDatabase
 
 class LoginGoogleViewController: UIViewController {
 
+    var ref: DatabaseReference!
+    var uidLogin = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -67,6 +72,12 @@ extension LoginGoogleViewController : GIDSignInUIDelegate {
     
 }
 
+func convertDateToString(_ date:Date) -> String{
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "dd/MM/yyyy"
+    return dateFormatter.string(from: date)
+}
+
 extension LoginGoogleViewController: GIDSignInDelegate{
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
@@ -74,6 +85,39 @@ extension LoginGoogleViewController: GIDSignInDelegate{
         }
         if let user = user {
             print(user.profile.email)
+            
+            let authentication = user.authentication
+            let idToken = authentication?.idToken
+            let accessToken = authentication?.accessToken
+            
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken!, accessToken: accessToken!)
+            
+            Auth.auth().signIn(with: credential, completion: { (fUser, fError) in
+                if let fError = fError {
+                    print(fError.localizedDescription)
+                }
+                if let fUser = fUser {
+                    //                    print(fUser.displayName ?? "a")
+                    //                    print(fUser.uid)
+                    self.uidLogin = fUser.uid
+                    
+                }
+                
+                let sb = UIStoryboard(name: "Decks", bundle: nil)
+                let viewController = sb.instantiateViewController(withIdentifier: "DeckViewController") as!   DeckViewController
+                
+                //            print(uidLogin)
+                viewController.UID = self.uidLogin
+                
+                //                viewController.mangDictCount = self.mangDictCount
+                //                viewController.decks = self.decks
+                //                print("-------------\(viewController.decks)")
+                //                viewController.decksversion2 = self.decksversion2
+                
+                self.navigationController?.pushViewController(viewController, animated: true)
+                
+                
+            })
         }
     }
     

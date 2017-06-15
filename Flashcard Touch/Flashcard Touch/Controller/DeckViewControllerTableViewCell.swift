@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class DeckViewControllerTableViewCell: UITableViewCell {
+class DeckViewControllerTableViewCell: SwipeTableViewCell {
 
     @IBOutlet weak var nameDeck: UILabel!
     @IBOutlet weak var numberReview: UILabel!

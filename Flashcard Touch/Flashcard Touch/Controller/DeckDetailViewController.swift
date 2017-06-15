@@ -22,6 +22,7 @@ class DeckDetailViewController: UIViewController {
     var isInsert = false
     var deck:Deck!
     var selectedDeckIndex = 0
+    var UID = ""
     
     //height for table view cell
     let cellSpacingHeight: CGFloat = 5
@@ -94,14 +95,6 @@ class DeckDetailViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-//        // [START screen_view_hit_swift]
-//        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
-//        tracker.set(kGAIScreenName, value: "Deck Detail View Controller")
-//        
-//        guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
-//        tracker.send(builder.build() as [NSObject : AnyObject])
-//        // [END screen_view_hit_swift]
     }
     
     override func didReceiveMemoryWarning() {
@@ -122,6 +115,7 @@ class DeckDetailViewController: UIViewController {
         print("Edit tapped")
         let viewController = DeckDetailAddEditViewController.instantiateFrom(appStoryboard: .DeckDetail)
         viewController.cardt = deck.cards
+        viewController.UID = UID
         viewController.deck = decks[selectedDeckIndex]
         viewController.delegate = self
         

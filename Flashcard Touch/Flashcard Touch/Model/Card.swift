@@ -35,4 +35,7 @@ class Card {
         self.marked = marked
     }
     
+    convenience init(term:String, definition:String, marked:Bool = false) {
+        self.init(term:term,definition:definition,termImage: UIImage(),definitionImage: UIImage(),deckID:"",marked:marked)
+    }
 }
