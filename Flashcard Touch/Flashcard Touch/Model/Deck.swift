@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Deck {
+class Deck {
     var identifier : String
     var name : String
     var cards : [Card]
@@ -32,4 +32,7 @@ struct Deck {
         self.folderID = folderID
     }
     
+    convenience init(name:String,cards:[Card],lastActivity:Date) {
+        self.init(identifier:UUID().uuidString,name:name,cards:cards,lastActivity:lastActivity,folderID:"1")
+    }
 }

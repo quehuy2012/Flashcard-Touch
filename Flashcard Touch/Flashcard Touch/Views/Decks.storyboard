@@ -1,43 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Myf-yh-wXA">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Myf-yh-wXA">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Deck-->
         <scene sceneID="iYH-bL-jVR">
             <objects>
-                <viewController id="pxf-Du-Pms" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeckViewController" id="pxf-Du-Pms" customClass="DeckViewController" customModule="Flashcard_Touch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DAr-QY-JKL"/>
                         <viewControllerLayoutGuide type="bottom" id="BhC-Fo-eyP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tMT-63-IgU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOu-6f-6qC">
+                                <rect key="frame" x="0.0" y="459" width="320" height="60"/>
+                                <color key="backgroundColor" red="0.14160239699999999" green="0.80481374260000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="S5q-cc-Sbm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Create a new deck">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="createDeck_Tapped:" destination="pxf-Du-Pms" eventType="touchUpInside" id="arc-wo-tsU"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HWI-lW-FQz">
+                                <rect key="frame" x="0.0" y="64" width="320" height="395"/>
+                                <color key="backgroundColor" red="0.93046178290000003" green="0.93373230380000005" blue="0.94354386649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.87450980389999999" green="0.87563550469999996" blue="0.87565046550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DeckViewControllerTableViewCell" rowHeight="100" id="Wuf-P4-Zil" customClass="DeckViewControllerTableViewCell" customModule="Flashcard_Touch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wuf-P4-Zil" id="kdE-8i-T6y">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="terms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8L-yc-Sr0">
+                                                    <rect key="frame" x="24" y="63" width="45" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuP-77-m3Z">
+                                                    <rect key="frame" x="85" y="63" width="21" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name deck" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjL-AC-ZHz">
+                                                    <rect key="frame" x="24" y="16" width="138" height="32.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GjL-AC-ZHz" firstAttribute="top" secondItem="kdE-8i-T6y" secondAttribute="topMargin" constant="8" id="8Lx-ty-OZb"/>
+                                                <constraint firstItem="a8L-yc-Sr0" firstAttribute="leading" secondItem="GjL-AC-ZHz" secondAttribute="leading" id="ILy-IV-075"/>
+                                                <constraint firstItem="HuP-77-m3Z" firstAttribute="baseline" secondItem="a8L-yc-Sr0" secondAttribute="baseline" id="bOi-aD-8KR"/>
+                                                <constraint firstItem="GjL-AC-ZHz" firstAttribute="leading" secondItem="kdE-8i-T6y" secondAttribute="leadingMargin" constant="16" id="bPa-K8-4pU"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="a8L-yc-Sr0" secondAttribute="bottom" constant="8" id="es0-8C-GC3"/>
+                                                <constraint firstItem="HuP-77-m3Z" firstAttribute="leading" secondItem="a8L-yc-Sr0" secondAttribute="trailing" constant="16" id="p0k-T8-Fj8"/>
+                                                <constraint firstItem="a8L-yc-Sr0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="GjL-AC-ZHz" secondAttribute="bottom" constant="4" id="wMw-xt-tPd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="nameDeck" destination="GjL-AC-ZHz" id="V2O-MP-thQ"/>
+                                            <outlet property="numberReview" destination="HuP-77-m3Z" id="FiR-7V-mpj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93046178286111292" green="0.93373230377464189" blue="0.94354386651522848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BhC-Fo-eyP" firstAttribute="top" secondItem="HOu-6f-6qC" secondAttribute="bottom" id="0sU-Ua-Z7u"/>
+                            <constraint firstItem="HOu-6f-6qC" firstAttribute="top" secondItem="HWI-lW-FQz" secondAttribute="bottom" id="9R3-wP-a69"/>
+                            <constraint firstAttribute="trailing" secondItem="HWI-lW-FQz" secondAttribute="trailing" id="OYd-dX-L14"/>
+                            <constraint firstItem="HOu-6f-6qC" firstAttribute="leading" secondItem="tMT-63-IgU" secondAttribute="leading" id="T5V-4V-2hA"/>
+                            <constraint firstAttribute="trailing" secondItem="HOu-6f-6qC" secondAttribute="trailing" id="gbt-c4-LD6"/>
+                            <constraint firstItem="HWI-lW-FQz" firstAttribute="leading" secondItem="tMT-63-IgU" secondAttribute="leading" id="ip9-cF-UDW"/>
+                            <constraint firstItem="HWI-lW-FQz" firstAttribute="top" secondItem="DAr-QY-JKL" secondAttribute="bottom" id="y3P-ue-Q9r"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tjf-tD-sPt"/>
+                    <navigationItem key="navigationItem" title="Deck" id="tjf-tD-sPt"/>
+                    <connections>
+                        <outlet property="tableView" destination="HWI-lW-FQz" id="oEW-tz-Te0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2o-4Y-GCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="593" y="-330"/>
+            <point key="canvasLocation" x="788" y="-285.60719640179911"/>
         </scene>
         <!--Decks-->
         <scene sceneID="XOA-v1-1Ii">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Myf-yh-wXA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Decks" id="NPy-ES-FQM"/>
+                    <tabBarItem key="tabBarItem" title="Decks" image="Deck" id="NPy-ES-FQM"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Io-Rx-0p6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14160239699999999" green="0.80481374260000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -49,4 +128,7 @@
             <point key="canvasLocation" x="116" y="-284.70764617691157"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Deck" width="34" height="36"/>
+    </resources>
 </document>

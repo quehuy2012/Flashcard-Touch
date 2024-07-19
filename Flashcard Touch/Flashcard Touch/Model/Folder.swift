@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Folder {
+class Folder {
     var identifier : String
     var name : String
     var decks : [Deck]?
